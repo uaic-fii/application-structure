@@ -1,0 +1,159 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<!--
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+-->
+
+<xwikidoc version="1.3" reference="Structure.Code.CourseSheet" locale="">
+  <web>Structure.Code</web>
+  <name>CourseSheet</name>
+  <language/>
+  <defaultLanguage/>
+  <translation>0</translation>
+  <creator>xwiki:XWiki.Admin</creator>
+  <parent>WebHome</parent>
+  <author>xwiki:XWiki.Admin</author>
+  <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+  <version>1.1</version>
+  <title>#if($doc.name == 'CourseSheet')Course Sheet#{else}$services.display.title($doc, {'displayerHint': 'default'})#end</title>
+  <comment/>
+  <minorEdit>false</minorEdit>
+  <syntaxId>xwiki/2.1</syntaxId>
+  <hidden>true</hidden>
+  <content>{{velocity}}
+## You can modify this page to customize the presentation of your object.
+## At first you should keep the default presentation and just save the document.
+
+$xwiki.ssfx.use("js/xwiki/table/table.css")
+
+#set($class = $doc.getObject('Structure.CourseClass').xWikiClass)
+
+## #set ($val = $util.parseInt($doc.display('Credits')) + 1)
+
+
+==$doc.display('CourseName')==
+
+
+(% class="grid" %)
+|(% colspan="2" %)**1. Information about the Study Program**
+|**1.1** Higher Learning Institution|**$doc.display('higherLearningInstitution')**
+|**1.2 **Faculty|**$doc.display('Faculty')**
+|**1.3 **Department|**$doc.display('Department')**
+|**1.4 **Field of Study|**$doc.display('FieldofStudy')**
+|**1.5** Type of Degree|**$doc.display('TypeofDegree')**
+|**1.6** Study Program / Qualification|**$doc.display('StudyProgram')**
+
+ 
+(% class="grid" %)
+|(% colspan="8" %)**2.  Information about the Course**
+|(% colspan="3" %)**2.1** Title|(% colspan="5" %)**$doc.display('CourseName')**
+|(% colspan="3" %)**2.2** Course Coordinator|(% colspan="5" %)**$doc.display('CourseCoordinator')**
+|(% colspan="3" %)**2.3** Laboratory Coordinators|(% colspan="5" %)**$doc.display('LaboratoryCoordinators')**
+|**2.4** Year of study|**$doc.display('YearofStudy')**|**2.5** Semester|**$doc.display('Semester')**|**2.6** Evaluation Type|**$doc.display('EvaluationType')**|**2.7** Course Type|**$doc.display('CourseType')**
+
+~* //OB – Compulsory / OP – Optional//
+
+ 
+(% class="grid" %)
+|(% colspan="6" %)**3. Total Estimated Time **(hours per semester and study activities)
+|**3.1** Number of hours per week|**$doc.display('HoursPerWeek')**|**3.2** Course hours|**$doc.display('CourseHoursPerWeek')**|**3.3** Laboratory hours|**$doc.display('LabHoursPerWeek')**
+|**3.4 **Total hours planned|#set ($totalTimePlanned = $util.parseInt($doc.display('CourseHoursTotal')) + $util.parseInt($doc.display('LabHoursTotal'))) **$totalTimePlanned**|**3.5** Course hours|**$doc.display('CourseHoursTotal')**|**3.6** Laboratory hours|**$doc.display('LabHoursTotal')**
+|(% colspan="5" %)Time distribution|hours
+|(% colspan="5" %)Individual study using manuals, course notes, etc.|**$doc.display('CourseStudyHours')**
+|(% colspan="5" %)Individual study in the library, using specialized electronic tools, field work|**$doc.display('LibraryStudyHours')**
+|(% colspan="5" %)Preparation of seminaries/laboratories, homework, papers, portfolios, essays|**$doc.display('HomeworkHours')**
+|(% colspan="5" %)Tutorials |**$doc.display('TutorialsHours')**
+|(% colspan="5" %)Exams|**$doc.display('ExaminationHours')**
+|(% colspan="5" %)Other activities|**$doc.display('OtherActivitiesHours')**
+|(% colspan="5" %)**3.7 **Total hours of individual study [ST + DS + PS]| #set ($indStudy = $util.parseInt($doc.display('CourseStudyHours')) + $util.parseInt($doc.display('LibraryStudyHours')) + $util.parseInt($doc.display('HomeworkHours')) + $util.parseInt($doc.display('TutorialsHours'))) **$indStudy**
+|(% colspan="5" %)**3.8 **Total hour per semester [no. of credits x 30 = T + E + C +TI ]| #set ($totalTime = $totalTimePlanned + $util.parseInt($doc.display('ExaminationHours')) + $indStudy) **$totalTime**
+|(% colspan="5" %)**3.9 **Number of credits|**$doc.display('Credits')**
+
+~* //Obs. T = C + S//
+
+(% class="grid" %)
+|(% colspan="2" %)**4. Preconditions **(if applicable)
+|**4.1 **Curriculum preconditions|$doc.display('PreconditionsCurriculum')
+|**4.2 **Competence preconditions|$doc.display('PreconditionsCompetence')
+
+(% class="grid" %)
+|(% colspan="2" %)**5. Conditions **(if applicable)
+|**5.1 **For courses|$doc.display('MaterielRequirementsCourse')
+|**5.2 **For laboratories|$doc.display('MaterielRequirementsLab')
+ 
+(% class="grid" %)
+|(% colspan="2" %)**6. Specific competencies**
+|**Professional Competencies**|$doc.display('CompetenciesProfessional')
+|**Transversal competencies**|$doc.display('CompetenciesTransversal') 
+
+ 
+(% class="grid" %)
+|(% colspan="2" %)**7. Objectives**
+|**7.1 General Objective**|$doc.display('ObjectivesGeneral')
+|**7.2 Specific objectives**|$doc.display('ObjectivesSpecific')
+ 
+(% class="grid" %)
+|(% colspan="6" %)**8. Content**
+|**8.1**|(% colspan="2" %)**Course**|(% colspan="2" %)**Teaching methods**|**Notes**
+|1.|(% colspan="2" %)$doc.display('ContentCourse1')|(% colspan="2" %)$doc.display('ContentCourse1Methods')|$doc.display('ContentCourse1Notes')
+|2.|(% colspan="2" %)$doc.display('ContentCourse2')|(% colspan="2" %)$doc.display('ContentCourse2Methods')|$doc.display('ContentCourse2Notes')
+|3.|(% colspan="2" %)$doc.display('ContentCourse3')|(% colspan="2" %)$doc.display('ContentCourse3Methods')|$doc.display('ContentCourse3Notes')
+|4.|(% colspan="2" %)$doc.display('ContentCourse4')|(% colspan="2" %)$doc.display('ContentCourse4Methods')|$doc.display('ContentCourse4Notes')
+|5.|(% colspan="2" %)$doc.display('ContentCourse5')|(% colspan="2" %)$doc.display('ContentCourse5Methods')|$doc.display('ContentCourse5Notes')
+|6.|(% colspan="2" %)$doc.display('ContentCourse6')|(% colspan="2" %)$doc.display('ContentCourse6Methods')|$doc.display('ContentCourse6Notes')
+|7.|(% colspan="2" %)$doc.display('ContentCourse7')|(% colspan="2" %)$doc.display('ContentCourse7Methods')|$doc.display('ContentCourse7Notes')
+|8.|(% colspan="2" %)$doc.display('ContentCourse8')|(% colspan="2" %)$doc.display('ContentCourse8Methods')|$doc.display('ContentCourse8Notes')
+|9.|(% colspan="2" %)$doc.display('ContentCourse9')|(% colspan="2" %)$doc.display('ContentCourse9Methods')|$doc.display('ContentCourse9Notes')
+|10.|(% colspan="2" %)$doc.display('ContentCourse10')|(% colspan="2" %)$doc.display('ContentCourse10Methods')|$doc.display('ContentCourse10Notes')
+|11.|(% colspan="2" %)$doc.display('ContentCourse11')|(% colspan="2" %)$doc.display('ContentCourse11Methods')|$doc.display('ContentCourse11Notes')
+|12.|(% colspan="2" %)$doc.display('ContentCourse12')|(% colspan="2" %)$doc.display('ContentCourse12Methods')|$doc.display('ContentCourse12Notes')
+|13.|(% colspan="2" %)$doc.display('ContentCourse13')|(% colspan="2" %)$doc.display('ContentCourse13Methods')|$doc.display('ContentCourse13Notes')
+|14.|(% colspan="2" %)$doc.display('ContentCourse14')|(% colspan="2" %)$doc.display('ContentCourse14Methods')|$doc.display('ContentCourse14Notes')
+|(% colspan="6" %)$doc.display('ContentCourseBibliography')
+|**8.2**|(% colspan="2" %)**Laboratory**|(% colspan="2" %)**Teaching methods**|**Notes**
+|1.|(% colspan="2" %)$doc.display('ContentLab1')|(% colspan="2" %)$doc.display('ContentLab1Methods')|$doc.display('ContentLab1Notes')
+|2.|(% colspan="2" %)$doc.display('ContentLab2')|(% colspan="2" %)$doc.display('ContentLab2Methods')|$doc.display('ContentLab2Notes')
+|3.|(% colspan="2" %)$doc.display('ContentLab3')|(% colspan="2" %)$doc.display('ContentLab3Methods')|$doc.display('ContentLab3Notes')
+|4.|(% colspan="2" %)$doc.display('ContentLab4')|(% colspan="2" %)$doc.display('ContentLab4Methods')|$doc.display('ContentLab4Notes')
+|5.|(% colspan="2" %)$doc.display('ContentLab5')|(% colspan="2" %)$doc.display('ContentLab5Methods')|$doc.display('ContentLab5Notes')
+|6.|(% colspan="2" %)$doc.display('ContentLab6')|(% colspan="2" %)$doc.display('ContentLab6Methods')|$doc.display('ContentLab6Notes')
+|7.|(% colspan="2" %)$doc.display('ContentLab7')|(% colspan="2" %)$doc.display('ContentLab7Methods')|$doc.display('ContentLab7Notes')
+|8.|(% colspan="2" %)$doc.display('ContentLab8')|(% colspan="2" %)$doc.display('ContentLab8Methods')|$doc.display('ContentLab8Notes')
+|9.|(% colspan="2" %)$doc.display('ContentLab9')|(% colspan="2" %)$doc.display('ContentLab9Methods')|$doc.display('ContentLab9Notes')
+|10.|(% colspan="2" %)$doc.display('ContentLab10')|(% colspan="2" %)$doc.display('ContentLab10Methods')|$doc.display('ContentLab10Notes')
+|11.|(% colspan="2" %)$doc.display('ContentLab11')|(% colspan="2" %)$doc.display('ContentLab11Methods')|$doc.display('ContentLab11Notes')
+|12.|(% colspan="2" %)$doc.display('ContentLab12')|(% colspan="2" %)$doc.display('ContentLab12Methods')|$doc.display('ContentLab12Notes')
+|13.|(% colspan="2" %)$doc.display('ContentLab13')|(% colspan="2" %)$doc.display('ContentLab13Methods')|$doc.display('ContentLab13Notes')
+|14.|(% colspan="2" %)$doc.display('ContentLab14')|(% colspan="2" %)$doc.display('ContentLab14Methods')|$doc.display('ContentLab14Notes')
+|(% colspan="6" %)$doc.display('ContentLabBibliography')
+
+(% class="grid" %)
+|**9. Adaptation of course content according to the expectations of the representatives of communities, professional associations and main employers from the field of the teaching**
+|$doc.display('IndustryConnection')
+
+(% class="grid" %)
+|(% colspan="7" %)**10. Evaluation**
+|**Activity type**|(% colspan="2" %)**10.1 Evaluation criteria**|(% colspan="2" %)**10.2 Evaluation methods**|(% colspan="2" %)**10.3 Percentage in final grade~(%)**
+|**10.4** Course|(% colspan="2" %)$doc.display('CourseEvaluationCriteria')|(% colspan="2" %)$doc.display('CourseEvaluationMethods')|(% colspan="2" %)$doc.display('CourseEvaluationPercentage')
+|**10.4** Laboratory/Seminar|(% colspan="2" %)$doc.display('LabEvaluationCriteria')|(% colspan="2" %)$doc.display('LabEvaluationMethods')|(% colspan="2" %)$doc.display('LabEvaluationPercentage')
+|(% colspan="7" %)**10.6** Minimum performance standards
+|(% colspan="7" %)$doc.display('MinimumPerformanceStandards')
+
+{{/velocity}}</content>
+</xwikidoc>
