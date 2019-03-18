@@ -36,25 +36,21 @@
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
   <hidden>true</hidden>
-  <content>Migrate the old **Structure.CourseClass** entries to the new **Structure.Code.CourseClass**
+  <content>{{include reference="Structure.Code.Migrations.Macros"/}}
+
+Migrate the old **Structure.CourseClass** objects to the new **Structure.Code.CourseClass**.
 
 {{velocity}}
 #set ($originalXClass = 'Structure.CourseClass')
 #set ($newXClass = 'Structure.Code.CourseClass')
-#foreach ($item in $services.query.xwql("from doc.object($originalXClass) as changes").execute())
-  * Processing [$item]...
- #set ($itemDoc = $xwiki.getDocument($item))
- #set ($originalXObject = $itemDoc.getObject($originalXClass))
- #if ("$!itemDoc.getObject($newXClass)" == '')
-   #set ($newXobject = $itemDoc.newObject($newXClass))
-   #foreach ($property in $originalXObject.getProperties())
-     #set ($discard = $newXobject.set($property.name, $property.value))
-   #end
-   #set ($discard = $itemDoc.removeObject($originalXObject))
-   #set ($discard = $itemDoc.save("Renaming [$originalXClass] object into [$newXClass]", true))
- #else
-    ** New object already exist, doing nothing...
- #end
+
+#if ("$!request.confirm" != 'true')
+  #getInitialResults($originalXClass)
+  {{html clean="false"}}&lt;a href="$doc.getURL('view', 'confirm=true')" class='button'&gt;Start&lt;/a&gt;{{/html}}
+#else
+  #if ($request.confirm == 'true')
+    #executeMigration($originalXClass $newXClass)
+  #end
 #end
 {{/velocity}}</content>
 </xwikidoc>

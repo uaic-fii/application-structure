@@ -20,37 +20,51 @@
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
 -->
 
-<xwikidoc version="1.3" reference="Structure.Code.Migrations.Curriculum" locale="">
+<xwikidoc version="1.3" reference="Structure.Code.Migrations.Macros" locale="">
   <web>Structure.Code.Migrations</web>
-  <name>Curriculum</name>
+  <name>Macros</name>
   <language/>
   <defaultLanguage/>
   <translation>0</translation>
   <creator>xwiki:XWiki.Admin</creator>
-  <parent>WebHome</parent>
   <author>xwiki:XWiki.Admin</author>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
   <version>1.1</version>
-  <title>Curriculum</title>
+  <title/>
   <comment/>
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
   <hidden>true</hidden>
-  <content>{{include reference="Structure.Code.Migrations.Macros"/}}
-
-Migrate the old **Structure.CurriculumClass** objects to the new **Structure.Code.CurriculumClass**.
-
-{{velocity}}
-#set ($originalXClass = 'Structure.CurriculumClass')
-#set ($newXClass = 'Structure.Code.CurriculumClass')
-
-#if ("$!request.confirm" != 'true')
-  #getInitialResults($originalXClass)
-  {{html clean="false"}}&lt;a href="$doc.getURL('view', 'confirm=true')" class='button'&gt;Start&lt;/a&gt;{{/html}}
-#else
-  #if ($request.confirm == 'true')
-    #executeMigration($originalXClass $newXClass)
+  <content>{{velocity}}
+#macro (getInitialResults $originalXClass)
+  Pages to be migrated:
+  #set ($results = $services.query.xwql("from doc.object($originalXClass) as changes").execute())
+  #if ($results.size() &gt; 0)
+    #foreach ($result in $results)
+      [[$result]]
+    #end
+  #else
+    No pages to migrate!
   #end
 #end
-{{/velocity}}</content>
+
+#macro (executeMigration $originalXClass $newXClass)
+  #foreach ($item in $services.query.xwql("from doc.object($originalXClass) as changes").execute())
+    #set ($itemDoc = $xwiki.getDocument($item))
+    #set ($originalXObject = $itemDoc.getObject($originalXClass))
+    #if ("$!itemDoc.getObject($newXClass)" == '')
+      #set ($newXobject = $itemDoc.newObject($newXClass))
+      #foreach ($property in $originalXObject.getProperties())
+        #set ($discard = $newXobject.set($property.name, $property.value))
+      #end
+      #set ($discard = $itemDoc.removeObject($originalXObject))
+      #set ($discard = $itemDoc.save("Renaming [$originalXClass] object into [$newXClass]", true))
+      [[$item]] migrated!
+    #else
+      ** New object already exist, doing nothing...
+    #end
+  #end
+#end
+{{/velocity}}
+</content>
 </xwikidoc>
