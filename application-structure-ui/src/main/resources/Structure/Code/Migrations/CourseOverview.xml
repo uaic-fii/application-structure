@@ -78,10 +78,27 @@
     #set ($title = $overviewDoc.content.split('=')[1])
     ##
     ## [[Course web page&gt;&gt;http://profs.info.uaic.ro/~~adiftene/Scoala/2016/IP/index.htm]]
-    #set ($courseWebPage = $overviewDoc.content.split('&gt;&gt;')[1].split(']]')[0].replace('~~', '~'))
+    #set ($courseWebPageParts = $overviewDoc.content.split('Course web page&gt;&gt;'))
+    #if ($courseWebPageParts.size() &gt; 1)
+      #set ($courseWebPage = $courseWebPageParts[1].split(']]')[0].replace('~~', '~'))
+    #end
     ##
     ## [[Course Description&gt;&gt;Structure.ProgrammingEngineeringDescription2016]]
-    #set ($courseDescription = $overviewDoc.content.split('&gt;&gt;')[2].split(']]')[0])
+    #set ($courseDescriptionParts = $overviewDoc.content.split('Course Description&gt;&gt;'))
+    #if ($courseDescriptionParts.size() &gt; 1)
+      #set ($courseDescription = $courseDescriptionParts[1].split(']]')[0])
+    #end
+    ##
+    ## [[Course Intranet Area&gt;&gt;MISSSoftwareSecurityCourseIntranet2016]]
+    #set ($courseIntranetAreaParts = $overviewDoc.content.split('Course Intranet Area&gt;&gt;'))
+    #if ($courseIntranetAreaParts.size() &gt; 1)
+      #set ($courseIntranetArea = $courseIntranetAreaParts[1].split(']]')[0])
+    #end
+    ## [[FII Intranet Area&gt;&gt;MISSSoftwareSecurityFIIIntranet2016]]
+    #set ($fiiIntranetAreaParts = $overviewDoc.content.split('FII Intranet Area&gt;&gt;'))
+    #if ($fiiIntranetAreaParts.size() &gt; 1)
+      #set ($fiiIntranetArea = $fiiIntranetAreaParts[1].split(']]')[0])
+    #end
     ##
     #*
       * Course Teachers
@@ -112,6 +129,8 @@
     #set ($overviewObj = $overviewDoc.newObject('Structure.Code.CourseOverviewClass'))
     #set ($discard = $overviewObj.set('courseWebPage', $courseWebPage))
     #set ($discard = $overviewObj.set('courseDescription', $courseDescription))
+    #set ($discard = $overviewObj.set('courseIntranetArea', $courseIntranetArea))
+    #set ($discard = $overviewObj.set('fiiIntranetArea', $fiiIntranetArea))
     #set ($discard = $overviewObj.set('courseTeachers',  $stringtool.join($cTeachers, ',')))
     #set ($discard = $overviewObj.set('laboratoryTeachers', $stringtool.join($lTeachers, ',')))
     ##
@@ -122,6 +141,8 @@
     #set ($discard = $valuesMap.put('title', $title))
     #set ($discard = $valuesMap.put('courseWebPage', $courseWebPage))
     #set ($discard = $valuesMap.put('courseDescription', $courseDescription))
+    #set ($discard = $valuesMap.put('courseIntranetArea', $courseIntranetArea))
+    #set ($discard = $valuesMap.put('fiiIntranetArea', $fiiIntranetArea))
     #set ($discard = $valuesMap.put('courseTeachers', $stringtool.join($cTeachers, ',')))
     #set ($discard = $valuesMap.put('laboratoryTeachers', $stringtool.join($lTeachers, ',')))
     ##
@@ -132,6 +153,7 @@
       #set ($discard = $overviewDoc.setContent(''))
       #set ($discard = $overviewDoc.save())
     #end
+
   #end
 #end
 

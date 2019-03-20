@@ -79,6 +79,33 @@
       <valueField/>
       <classType>com.xpn.xwiki.objects.classes.PageClass</classType>
     </courseDescription>
+    <courseIntranetArea>
+      <cache>0</cache>
+      <classname/>
+      <customDisplay/>
+      <defaultValue/>
+      <disabled>0</disabled>
+      <displayType>input</displayType>
+      <freeText/>
+      <hint/>
+      <idField/>
+      <multiSelect>0</multiSelect>
+      <name>courseIntranetArea</name>
+      <number>3</number>
+      <picker>1</picker>
+      <prettyName>Course Intranet Area</prettyName>
+      <relationalStorage>0</relationalStorage>
+      <separator> </separator>
+      <separators/>
+      <size>1</size>
+      <sort/>
+      <sql/>
+      <unmodifiable>0</unmodifiable>
+      <validationMessage/>
+      <validationRegExp/>
+      <valueField/>
+      <classType>com.xpn.xwiki.objects.classes.PageClass</classType>
+    </courseIntranetArea>
     <courseTeachers>
       <cache>0</cache>
       <customDisplay/>
@@ -89,7 +116,7 @@
       <hint/>
       <multiSelect>1</multiSelect>
       <name>courseTeachers</name>
-      <number>3</number>
+      <number>5</number>
       <picker>1</picker>
       <prettyName>Course teachers</prettyName>
       <relationalStorage>0</relationalStorage>
@@ -111,12 +138,39 @@
       <number>1</number>
       <picker>1</picker>
       <prettyName>Course web page</prettyName>
-      <size>30</size>
+      <size>125</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
     </courseWebPage>
+    <fiiIntranetArea>
+      <cache>0</cache>
+      <classname/>
+      <customDisplay/>
+      <defaultValue/>
+      <disabled>0</disabled>
+      <displayType>input</displayType>
+      <freeText/>
+      <hint/>
+      <idField/>
+      <multiSelect>0</multiSelect>
+      <name>fiiIntranetArea</name>
+      <number>4</number>
+      <picker>1</picker>
+      <prettyName>FII Intranet Area</prettyName>
+      <relationalStorage>0</relationalStorage>
+      <separator> </separator>
+      <separators/>
+      <size>1</size>
+      <sort/>
+      <sql/>
+      <unmodifiable>0</unmodifiable>
+      <validationMessage/>
+      <validationRegExp/>
+      <valueField/>
+      <classType>com.xpn.xwiki.objects.classes.PageClass</classType>
+    </fiiIntranetArea>
     <laboratoryTeachers>
       <cache>0</cache>
       <customDisplay/>
@@ -127,7 +181,7 @@
       <hint/>
       <multiSelect>1</multiSelect>
       <name>laboratoryTeachers</name>
-      <number>4</number>
+      <number>6</number>
       <picker>1</picker>
       <prettyName>Laboratory teachers</prettyName>
       <relationalStorage>0</relationalStorage>
