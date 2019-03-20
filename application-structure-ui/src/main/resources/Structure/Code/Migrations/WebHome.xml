@@ -36,6 +36,13 @@
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
   <hidden>true</hidden>
-  <content>
-</content>
+  <content>{{velocity}}
+{{info}}
+Here's a list of all migration scripts, developed for Faculty of Computer Science. They are meant to update the old Structure to new new version, in order to reach a compatibility with the latest XWiki features.
+
+(!) It is recommended to execute the migration scripts in the indicated orded as there are some related properties shared by different pages.
+{{/info}}
+
+{{documentTree root="document:$doc.documentReference" /}}
+{{/velocity}}</content>
 </xwikidoc>
