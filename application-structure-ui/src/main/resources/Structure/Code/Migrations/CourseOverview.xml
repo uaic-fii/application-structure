@@ -69,19 +69,20 @@
 #macro (executeMigration)
   #set ($results = $services.query.xwql("where doc.content like '%[[Course Description&gt;&gt;%' and doc.fullName &lt;&gt; '$doc.fullName'").execute())
   #foreach ($result in $results)
+    #set ($valuesMap = {})
   -----
     [[$result]]
     #set ($overviewDoc = $xwiki.getDocument($result))
-
+    ##
     ## =Algebraic Foundations of Computer Science=
     #set ($title = $overviewDoc.content.split('=')[1])
-
+    ##
     ## [[Course web page&gt;&gt;http://profs.info.uaic.ro/~~adiftene/Scoala/2016/IP/index.htm]]
     #set ($courseWebPage = $overviewDoc.content.split('&gt;&gt;')[1].split(']]')[0].replace('~~', '~'))
-
+    ##
     ## [[Course Description&gt;&gt;Structure.ProgrammingEngineeringDescription2016]]
     #set ($courseDescription = $overviewDoc.content.split('&gt;&gt;')[2].split(']]')[0])
-
+    ##
     #*
       * Course Teachers
       ** [[Adrian Iftene&gt;&gt;XWiki.adiftene]]
@@ -90,13 +91,13 @@
     #set ($teacherParts = $overviewDoc.content.split('Course Teachers')[1])
     #set ($courseTeachersParts = $teacherParts.split('Seminary/Laboratory Teachers'))
     #set ($courseTeachers = $courseTeachersParts[0])
-
+    ##
     ## Identify teachers
     #*
       ** Ferucio Laurențiu Țiplea
       ** [[Sorin Iftene&gt;&gt;XWiki.siftene]]
     *#
-
+    ##
     ## Course teachers
     #parseTeachers($courseTeachers $teachersArray)
     #set ($cTeachers = $teachersArray)
@@ -106,19 +107,31 @@
       #parseTeachers($seminarTeachers $teachersArray)
         #set ($lTeachers = $teachersArray)
     #end
-
+    ##
     ## Add new object to the Overview page
     #set ($overviewObj = $overviewDoc.newObject('Structure.Code.CourseOverviewClass'))
     #set ($discard = $overviewObj.set('courseWebPage', $courseWebPage))
     #set ($discard = $overviewObj.set('courseDescription', $courseDescription))
     #set ($discard = $overviewObj.set('courseTeachers',  $stringtool.join($cTeachers, ',')))
     #set ($discard = $overviewObj.set('laboratoryTeachers', $stringtool.join($lTeachers, ',')))
-
+    ##
     ## Set title
     #set ($discard = $overviewDoc.setTitle($title))
-    ## Remove the content as the Overview sheet will handle the view.
-    #set ($discard = $overviewDoc.setContent(''))
-    #set ($discard = $overviewDoc.save())
+
+    ## Compute a json for a nice display.
+    #set ($discard = $valuesMap.put('title', $title))
+    #set ($discard = $valuesMap.put('courseWebPage', $courseWebPage))
+    #set ($discard = $valuesMap.put('courseDescription', $courseDescription))
+    #set ($discard = $valuesMap.put('courseTeachers', $stringtool.join($cTeachers, ',')))
+    #set ($discard = $valuesMap.put('laboratoryTeachers', $stringtool.join($lTeachers, ',')))
+    ##
+    (%class="json"%)$jsontool.serialize($valuesMap)
+
+    #if (!$jsontool.serialize($valuesMap).contains('ERROR'))
+      ## Remove the content as the Overview sheet will handle the view.
+      #set ($discard = $overviewDoc.setContent(''))
+      #set ($discard = $overviewDoc.save())
+    #end
   #end
 #end
 
@@ -130,17 +143,132 @@
       #if ($line.startsWith('[['))
         #set ($line = $line.replace('[[', '').replace(']]', ''))
         #set ($lineParts = $line.split('&gt;&gt;'))
-        #set ($userName = $lineParts[1].toString())
+        #if ($lineParts.size() &gt; 1)
+          #set ($userName = $lineParts[1].toString())
+        #else
+          ## Wrong user format
+          #set ($userName = "ERROR: $lineParts[0]")
+        #end
         #set ($discard = $teachersArray.add($userName.replace('*', '').trim()))
-      ## Teachers having only fullname
+      ## Wrong user format
       #else
-        ## Find the XWiki username from the fullname
-        ## Not really doable!!!
-        #set ($discard = $teachersArray.add($line.replace('*', '').trim()))
+        #set ($discard = $teachersArray.add("ERROR: $line"))
       #end
     #end
   #end
 #end
 {{/velocity}}
 </content>
+  <object>
+    <name>Structure.Code.Migrations.CourseOverview</name>
+    <number>0</number>
+    <className>XWiki.JavaScriptExtension</className>
+    <guid>3b393439-9983-4ad9-9df8-dd8b5e421947</guid>
+    <class>
+      <name>XWiki.JavaScriptExtension</name>
+      <customClass/>
+      <customMapping/>
+      <defaultViewSheet/>
+      <defaultEditSheet/>
+      <defaultWeb/>
+      <nameField/>
+      <validationScript/>
+      <cache>
+        <cache>0</cache>
+        <defaultValue>long</defaultValue>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <multiSelect>0</multiSelect>
+        <name>cache</name>
+        <number>5</number>
+        <prettyName>Caching policy</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators>|, </separators>
+        <size>1</size>
+        <unmodifiable>0</unmodifiable>
+        <values>long|short|default|forbid</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </cache>
+      <code>
+        <contenttype>PureText</contenttype>
+        <disabled>0</disabled>
+        <editor>PureText</editor>
+        <name>code</name>
+        <number>2</number>
+        <prettyName>Code</prettyName>
+        <rows>20</rows>
+        <size>50</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+      </code>
+      <name>
+        <disabled>0</disabled>
+        <name>name</name>
+        <number>1</number>
+        <prettyName>Name</prettyName>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </name>
+      <parse>
+        <disabled>0</disabled>
+        <displayFormType>select</displayFormType>
+        <displayType>yesno</displayType>
+        <name>parse</name>
+        <number>4</number>
+        <prettyName>Parse content</prettyName>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
+      </parse>
+      <use>
+        <cache>0</cache>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <multiSelect>0</multiSelect>
+        <name>use</name>
+        <number>3</number>
+        <prettyName>Use this extension</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators>|, </separators>
+        <size>1</size>
+        <unmodifiable>0</unmodifiable>
+        <values>currentPage|onDemand|always</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </use>
+    </class>
+    <property>
+      <cache>long</cache>
+    </property>
+    <property>
+      <code>require(['jquery'], function ($) {
+  var counter = 0;
+  $('.json').each(function() {
+    var jsonPretty = JSON.stringify(JSON.parse($(this).text()),null,2);
+    var newContent = '';
+    if (jsonPretty.includes('ERROR')) {
+      counter ++;
+      newContent = newContent + "&lt;div class='box errormessage'&gt;&lt;p&gt;There are broken users in this page. The expected format is [[Firstname Lastname&gt;&gt;XWiki.username]]&lt;/p&gt;&lt;/div&gt;&lt;br&gt;";
+    }
+    newContent = newContent + '&lt;pre&gt;' + jsonPretty + '&lt;/pre&gt;';
+    $(this).html(newContent);
+  })
+  
+  if (counter &gt; 0) {
+    var headerError = "&lt;div class='box errormessage'&gt;&lt;p&gt;There are broken users in " + counter + " pages. The expected format is [[Firstname Lastname&gt;&gt;XWiki.username]]. Please scroll down and fix the pages before reexecuting the script!&lt;/p&gt;&lt;/div&gt;&lt;br&gt;";
+    $('.box.infomessage').after(headerError);
+  }
+});</code>
+    </property>
+    <property>
+      <name/>
+    </property>
+    <property>
+      <parse/>
+    </property>
+    <property>
+      <use>currentPage</use>
+    </property>
+  </object>
 </xwikidoc>

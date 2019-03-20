@@ -39,7 +39,9 @@
   <content>{{velocity}}
 #macro (getInitialResults $originalXClass)
   * Data pages to migrate:
-  #set ($results = $services.query.xwql("from doc.object($originalXClass) as changes").execute())
+  #set ($originalTemplate = $originalXClass.replace('Class', 'Template'))
+  #set ($statement = "from doc.object($originalXClass) as changes where doc.fullName &lt;&gt; '$originalTemplate'")
+  #set ($results = $services.query.xwql($statement).execute())
   #if ($results.size() &gt; 0)
     #foreach ($result in $results)
       ** [[$result]]
@@ -63,7 +65,10 @@
 #end
 
 #macro (executeMigration $originalXClass $newXClass)
-  #foreach ($item in $services.query.xwql("from doc.object($originalXClass) as changes").execute())
+  #set ($originalTemplate = $originalXClass.replace('Class', 'Template'))
+  #set ($statement = "from doc.object($originalXClass) as changes where doc.fullName &lt;&gt; '$originalTemplate'")
+  #set ($results = $services.query.xwql($statement).execute())
+  #foreach ($item in $results)
     #set ($itemDoc = $xwiki.getDocument($item))
     #set ($originalXObject = $itemDoc.getObject($originalXClass))
     #if ("$!itemDoc.getObject($newXClass)" == '')
