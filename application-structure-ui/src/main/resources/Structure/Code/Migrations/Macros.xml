@@ -38,22 +38,27 @@
   <hidden>true</hidden>
   <content>{{velocity}}
 #macro (getInitialResults $originalXClass)
-  * Data pages to be migrated:
+  * Data pages to migrate:
   #set ($results = $services.query.xwql("from doc.object($originalXClass) as changes").execute())
   #if ($results.size() &gt; 0)
     #foreach ($result in $results)
       ** [[$result]]
     #end
   #else
-    ** No pages to migrate!
+    ** No data pages to migrate!
   #end
 
-  * Old structure pages to be removed:
+  * Old structure pages to remove:
   #set ($structurePages = [$originalXClass, $originalXClass.replace('Class', 'Sheet'), $originalXClass.replace('Class', 'Template')])
   #foreach ($structurePage in $structurePages)
+    #set ($count = 0)
     #if (!$xwiki.getDocument($structurePage).isNew())
       ** [[$structurePage]]
+      #set ($count = $count + 1)
     #end
+  #end
+  #if ($count == 0)
+    ** No structure pages to remove!
   #end
 #end
 
@@ -80,6 +85,20 @@
     #if (!$xwiki.getDocument($structurePage).isNew())
       #set ($discard = $xwiki.getDocument($structurePage).delete())
     #end
+  #end
+#end
+
+#macro (migrate $originalXClass $newXClass)
+
+  {{info}}Migrate the old **$originalXClass** objects to the new **$newXClass**.{{/info}}
+
+  #if ("$!request.confirm" != 'true')
+    #getInitialResults($originalXClass)
+    #if ($results.size() &gt; 0)
+      {{html clean="false"}}&lt;a href="$doc.getURL('view', 'confirm=true')" class='button'&gt;Start&lt;/a&gt;{{/html}}
+    #end
+  #else
+    #executeMigration($originalXClass $newXClass)
   #end
 #end
 {{/velocity}}

@@ -38,19 +38,10 @@
   <hidden>true</hidden>
   <content>{{include reference="Structure.Code.Migrations.Macros"/}}
 
-Migrate the old **Structure.CurriculumClass** objects to the new **Structure.Code.CurriculumClass**.
-
 {{velocity}}
 #set ($originalXClass = 'Structure.CurriculumClass')
 #set ($newXClass = 'Structure.Code.CurriculumClass')
 
-#if ("$!request.confirm" != 'true')
-  #getInitialResults($originalXClass)
-  {{html clean="false"}}&lt;a href="$doc.getURL('view', 'confirm=true')" class='button'&gt;Start&lt;/a&gt;{{/html}}
-#else
-  #if ($request.confirm == 'true')
-    #executeMigration($originalXClass $newXClass)
-  #end
-#end
+#migrate ($originalXClass $newXClass)
 {{/velocity}}</content>
 </xwikidoc>
