@@ -1989,6 +1989,15 @@
       <values>1=1|2=2|3=3</values>
       <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
     </YearofStudy>
+    <code>
+      <disabled>0</disabled>
+      <name>code</name>
+      <number>131</number>
+      <prettyName>code</prettyName>
+      <size>30</size>
+      <unmodifiable>0</unmodifiable>
+      <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+    </code>
     <higherLearningInstitution>
       <customDisplay/>
       <disabled>0</disabled>
