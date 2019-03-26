@@ -42,8 +42,10 @@
 
 #set($class = $doc.getObject('Structure.Code.CourseOverviewClass').xWikiClass)
 #foreach($prop in $class.properties)
-  ; $doc.displayPrettyName($prop.name)
-  : $doc.display($prop.name)
+  #if ("$!doc.getValue($prop.name)" != '')
+    ; $doc.displayPrettyName($prop.name)
+    : $doc.display($prop.name)
+  #end
 #end
 {{/velocity}}</content>
 </xwikidoc>
