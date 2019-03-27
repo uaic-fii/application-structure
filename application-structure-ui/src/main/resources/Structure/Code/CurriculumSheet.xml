@@ -36,40 +36,256 @@
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
   <hidden>true</hidden>
-  <content>{{velocity}}
-## You can modify this page to customize the presentation of your object.
-## At first you should keep the default presentation and just save the document.
-$xwiki.ssfx.use("js/xwiki/table/table.css")
-$xwiki.jsfx.use("js/xwiki/table/tablefilterNsort.js", true)
+  <content>{{velocity output="false"}}
+#macro (displayYear $yearOfStudy)
+  #set ($year = $doc.getValue('StartYear').intValue() + $mathtool.toInteger($yearOfStudy).intValue() - 1)
+  (% class="doOddEven grid" id="tableid" %)
+  (% class="sortHeader" %)|=(% rowspan="4" %)Nr.|=(% rowspan="4" %)**Code** |=(% colspan="7" rowspan="3" %)**Course Name**|=(% colspan="4" %)**Sem. I**|=(% colspan="4" %)**Sem. II**|=(% colspan="2" %)**Examination Method**
+  |=C|=S|=L|=(% rowspan="2" %)Cr|=C|=S|=L|=(% rowspan="2" %)Cr|=(% rowspan="3" %)Sem. I|=(% rowspan="3" %)Sem. II
+  |=(% colspan="3" %)hours/week|=(% colspan="3" %)hours/week
+  |=(% colspan="15" %)COMPULSORY
+  #getCourses('OB' $yearOfStudy 'Bachelor' $year $totals)
+  #set ($tComp = $totals)
+  | | |=(% colspan="15" %)NONCOMPULSORY
+  #getCourses('OP' $yearOfStudy 'Bachelor' $year $totals)
+  #set ($tNComp = $totals)
+  | | |(% colspan="7" %)TOTAL COMPULSORY|#foreach($total in $tComp)$total|#end|
+  | | |(% colspan="7" %)TOTAL NONCOMPULSORY|#foreach($total in $tNComp)$total|#end|
+  | | |(% colspan="15" %)**Optional Course x**
+  #getCourses('QQ' $yearOfStudy 'Bachelor' $year $totals)
+  #set ($tOpt = $totals)
+  | | |(% colspan="7" %)TOTAL OPTIONAL|#foreach($total in $tOpt)$total|#end|
+#end
 
-#set($class = $doc.getObject('Structure.CurriculumClass').xWikiClass)
+#macro (getCourses $courseType $yearOfStudy $typeOfDegree $year $totals)
+  #set ($totals = [0,0,0,0,0,0,0,0])
+  #set ($statement = "select doc.fullName, description.code, description.Semester, description.HoursPerWeek, description.CourseHoursPerWeek, description.LabHoursPerWeek, description.Credits from Document doc, Document doc1, doc.object(Structure.Code.CourseOverviewClass) as overview,  doc1.object(Structure.Code.CourseClass) as description where overview.courseDescription = doc1.fullName and description.CourseType = :courseType and description.YearofStudy = :yearOfStudy and description.TypeofDegree = :typeOfDegree and doc1.fullName like :year order by description.code asc")
+  #set ($results = $services.query.xwql($statement).bindValue('courseType', $courseType).bindValue('yearOfStudy', $yearOfStudy).bindValue('typeOfDegree', $typeOfDegree).bindValue('year', "%$year").execute())
+  #foreach ($result in $results)
+    #set ($index = $foreach.index + 1)
+    #set ($code = $result[1])
+    #set ($semester = $result[2])
+    #if ($semester.equals('I'))
+      #set ($hpw1 = $result[3])
+      #set ($chpw1 = $result[4])
+      #set ($lhpw1 = $result[5])
+      #set ($credits1 = $result[6])
+      #set ($exam1 = 'E')
+    #else
+      #set ($hpw2 = $result[3])
+      #set ($chpw2 = $result[4])
+      #set ($lhpw2 = $result[5])
+      #set ($credits2 = $result[6])
+      #set ($exam2 = 'E')
+    #end
+    #set ($totals[0] = $totals[0] + $!hpw1)
+    #set ($totals[1] = $totals[1] + $!chpw1)
+    #set ($totals[2] = $totals[2] + $!lhpw1)
+    #set ($totals[3] = $totals[3] + $!credits1)
+    #set ($totals[4] = $totals[4] + $!hpw2)
+    #set ($totals[5] = $totals[5] + $!chpw2)
+    #set ($totals[6] = $totals[6] + $!lhpw2)
+    #set ($totals[7] = $totals[7] + $!credits2)
+    #set ($overviewDoc = $xwiki.getDocument($result[0]))
+    #foreach ($total in $totals)
+      #if ("$!total" == '')
+        #set ($totals[$foreach.index] = 0)
+      #end
+    #end
+    |$index|$code|(% colspan="7" %)[[$overviewDoc.title&gt;&gt;$overviewDoc]]|$!hpw1|$!chpw1|$!lhpw1|$!credits1|$!hpw2|$!chpw2|$!lhpw2|$!credits2|$!exam1|$!exam2
+  #end
+#end
 
-(% style="color:blue" %)
+#macro (displayGraduation)
+  (% class="doOddEven grid" id="tableid" %)
+  (% class="sortHeader" %)|=(% rowspan="4" %)Nr.|=(% rowspan="4" %)**Code** |=(% colspan="7" rowspan="3" %)**Course Name**|=(% colspan="4" %)**Sem. I**|=(% colspan="4" %)**Sem. II**|=(% colspan="2" %)**Examination Method**
+  |=C|=S|=L|=(% rowspan="2" %)Cr|=C|=S|=L|=(% rowspan="2" %)Cr|=(% rowspan="3" %)Sem. I|=(% rowspan="3" %)Sem. II
+  |=(% colspan="3" %)hours/week|=(% colspan="3" %)hours/week
+  |=(% colspan="15" %)COMPULSORY
+  |1| |(% colspan="7" %)Graduation Exam| | | | | | | |5| |E
+#end
+
+#macro (displayPedagogicalModule)
+  (% class="doOddEven grid" id="tableid" %)
+  (% class="sortHeader" %)|=(% rowspan="3" %)Nr.|=(% rowspan="3" %)**Code** |=(% colspan="7" rowspan="3" %)**Course Name**|=(% colspan="4" %)**Sem. I**|=(% colspan="4" %)**Sem. II**|=(% colspan="2" %)**Examination Method**
+  |=C|=S|=L|=(% rowspan="2" %)Cr|=C|=S|=L|=(% rowspan="2" %)Cr|=(% rowspan="3" %)Sem. I|=(% rowspan="3" %)Sem. II
+  |=(% colspan="3" %)hours/week|=(% colspan="3" %)hours/week
+  |=(% colspan="19" %)1^^st^^ Year
+  |1|CS1114F|(% colspan="7" %)Educational Psychology|2|2| |5| | | | |E| 
+  |2|CS1115F|(% colspan="7" %)Pedagogy I (Foundations of pedagogy+  
+  Evaluation Theory and methodology)| | | | |2|2| |5| |E
+  | | |(% colspan="7" %)TOTAL NONCOMPULSORY|2|2|0|5|2|2|0|5| | 
+  |=(% colspan="19" %)2^^nd^^ Year
+  |3|CS2113F|(% colspan="7" %)Pedagogy II
+  (Instruction theory and methodology +
+  Evaluation theory and methodology)|2|2| |5| | | | |E| 
+  |4|CS2214F|(% colspan="7" %)Teaching Techniques for Computer Science| | | | |2|2| |5| |E
+  | | |(% colspan="7" %)TOTAL NONCOMPULSORY|2|2|0|5|2|2|0|5| | 
+  |=(% colspan="19" %)3^^rd^^ Year
+  |5|CS3113F|(% colspan="7" %)Computer Assisted Education|1|1| |2| | | | |CO| 
+  |6|CS3114F|(% colspan="7" %)Teaching Traineeship 1
+  (compulsory pre-higher education)| |3| |3| | | | |CO| 
+  |7|CS3215F|(% colspan="7" %)Class management| | | | |1|1| |3| |E
+  |8|CS3216F|(% colspan="7" %)Teaching Traineeship 2
+  (compulsory pre-higher education)| | | | | |3| |2| |CO
+  | | |(% colspan="7" %)TOTAL NONCOMPULSORY|1|4|0|5|1|4|0|5| | 
+#end
+{{/velocity}}
+
+{{velocity}}
+#set ($discard = $xwiki.ssx.use('Structure.Code.CurriculumSheet'))
+
 ==Curriculum  $doc.display('StartYear') - $doc.display('EndYear')==
 
-(% style="color:blue" %)
 ===1^^st^^ Year===
-$doc.display('Year1')
+#displayYear('1')
 
-(% style="color:blue" %)
 ===2^^nd^^ Year===
-$doc.display('Year2')
+#displayYear('2')
 
-(% style="color:blue" %)
 ===3^^rd^^ Year===
-$doc.display('Year3')
+#displayYear('3')
 
-(% style="color:blue" %)
-===Graduation=== 
-$doc.display('Graduation')
+===Graduation===
+#displayGraduation()
 
-(% style="color:blue" %)
 ===Pedagogical Module===
-$doc.display('Pedagogy')
-
-## #foreach($prop in $class.properties)
-##   ; $prop.prettyName
-##   : $doc.display($prop.getName())
-## #end
+#displayPedagogicalModule()
 {{/velocity}}</content>
+  <object>
+    <name>Structure.Code.CurriculumSheet</name>
+    <number>0</number>
+    <className>XWiki.StyleSheetExtension</className>
+    <guid>11229a9d-2236-4515-b207-ed450f02fa78</guid>
+    <class>
+      <name>XWiki.StyleSheetExtension</name>
+      <customClass/>
+      <customMapping/>
+      <defaultViewSheet/>
+      <defaultEditSheet/>
+      <defaultWeb/>
+      <nameField/>
+      <validationScript/>
+      <cache>
+        <cache>0</cache>
+        <defaultValue>long</defaultValue>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <multiSelect>0</multiSelect>
+        <name>cache</name>
+        <number>5</number>
+        <prettyName>Caching policy</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators>|, </separators>
+        <size>1</size>
+        <unmodifiable>0</unmodifiable>
+        <values>long|short|default|forbid</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </cache>
+      <code>
+        <contenttype>PureText</contenttype>
+        <disabled>0</disabled>
+        <editor>PureText</editor>
+        <name>code</name>
+        <number>2</number>
+        <prettyName>Code</prettyName>
+        <rows>20</rows>
+        <size>50</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+      </code>
+      <contentType>
+        <cache>0</cache>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <multiSelect>0</multiSelect>
+        <name>contentType</name>
+        <number>6</number>
+        <prettyName>Content Type</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators>|, </separators>
+        <size>1</size>
+        <unmodifiable>0</unmodifiable>
+        <values>CSS|LESS</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </contentType>
+      <name>
+        <disabled>0</disabled>
+        <name>name</name>
+        <number>1</number>
+        <prettyName>Name</prettyName>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </name>
+      <parse>
+        <disabled>0</disabled>
+        <displayFormType>select</displayFormType>
+        <displayType>yesno</displayType>
+        <name>parse</name>
+        <number>4</number>
+        <prettyName>Parse content</prettyName>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
+      </parse>
+      <use>
+        <cache>0</cache>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <multiSelect>0</multiSelect>
+        <name>use</name>
+        <number>3</number>
+        <prettyName>Use this extension</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators>|, </separators>
+        <size>1</size>
+        <unmodifiable>0</unmodifiable>
+        <values>currentPage|onDemand|always</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </use>
+    </class>
+    <property>
+      <cache>long</cache>
+    </property>
+    <property>
+      <code>h2, h3 {
+  color: blue;
+}
+
+.grid th {
+    background: #f0f0f0;
+    border: 1px solid #CCC;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    padding: 2px 4px;
+    text-align: center;
+}
+
+.grid {
+    border-collapse: collapse;
+    margin: 2px 0 5px;
+    width: 90%;
+}
+
+.grid td {
+    border: 1px solid #CCC;
+    padding: 3px 4px;
+}</code>
+    </property>
+    <property>
+      <contentType/>
+    </property>
+    <property>
+      <name/>
+    </property>
+    <property>
+      <parse/>
+    </property>
+    <property>
+      <use>currentPage</use>
+    </property>
+  </object>
 </xwikidoc>

@@ -54,6 +54,7 @@
       <EndYear>
         <customDisplay/>
         <disabled>0</disabled>
+        <hint/>
         <name>EndYear</name>
         <number>2</number>
         <numberType>long</numberType>
@@ -64,39 +65,10 @@
         <validationRegExp/>
         <classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
       </EndYear>
-      <Graduation>
-        <customDisplay/>
-        <disabled>0</disabled>
-        <editor>---</editor>
-        <name>Graduation</name>
-        <number>6</number>
-        <picker>0</picker>
-        <prettyName>Graduation</prettyName>
-        <rows>5</rows>
-        <size>40</size>
-        <unmodifiable>0</unmodifiable>
-        <validationMessage/>
-        <validationRegExp/>
-        <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-      </Graduation>
-      <Pedagogy>
-        <customDisplay/>
-        <disabled>0</disabled>
-        <editor>---</editor>
-        <name>Pedagogy</name>
-        <number>7</number>
-        <picker>0</picker>
-        <prettyName>Pedagogy</prettyName>
-        <rows>5</rows>
-        <size>40</size>
-        <unmodifiable>0</unmodifiable>
-        <validationMessage/>
-        <validationRegExp/>
-        <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-      </Pedagogy>
       <StartYear>
         <customDisplay/>
         <disabled>0</disabled>
+        <hint/>
         <name>StartYear</name>
         <number>1</number>
         <numberType>long</numberType>
@@ -107,77 +79,12 @@
         <validationRegExp/>
         <classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
       </StartYear>
-      <Year1>
-        <customDisplay/>
-        <disabled>0</disabled>
-        <editor>---</editor>
-        <name>Year1</name>
-        <number>3</number>
-        <picker>0</picker>
-        <prettyName>Year1</prettyName>
-        <rows>5</rows>
-        <size>40</size>
-        <unmodifiable>0</unmodifiable>
-        <validationMessage/>
-        <validationRegExp/>
-        <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-      </Year1>
-      <Year2>
-        <customDisplay/>
-        <disabled>0</disabled>
-        <editor>---</editor>
-        <name>Year2</name>
-        <number>4</number>
-        <picker>0</picker>
-        <prettyName>Year2</prettyName>
-        <rows>5</rows>
-        <size>40</size>
-        <unmodifiable>0</unmodifiable>
-        <validationMessage/>
-        <validationRegExp/>
-        <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-      </Year2>
-      <Year3>
-        <customDisplay/>
-        <disabled>0</disabled>
-        <editor>---</editor>
-        <name>Year3</name>
-        <number>5</number>
-        <picker>0</picker>
-        <prettyName>Year3</prettyName>
-        <rows>5</rows>
-        <size>40</size>
-        <unmodifiable>0</unmodifiable>
-        <validationMessage/>
-        <validationRegExp/>
-        <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-      </Year3>
     </class>
     <property>
       <EndYear/>
     </property>
     <property>
-      <Graduation>
-</Graduation>
-    </property>
-    <property>
-      <Pedagogy>
-</Pedagogy>
-    </property>
-    <property>
       <StartYear/>
-    </property>
-    <property>
-      <Year1>
-</Year1>
-    </property>
-    <property>
-      <Year2>
-</Year2>
-    </property>
-    <property>
-      <Year3>
-</Year3>
     </property>
   </object>
 </xwikidoc>
