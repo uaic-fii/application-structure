@@ -31,7 +31,7 @@
   <author>xwiki:XWiki.Admin</author>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
   <version>1.1</version>
-  <title>5. Store courses' Code value in courses objects</title>
+  <title>3. Store courses' Code value in courses objects</title>
   <comment/>
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
@@ -95,8 +95,8 @@
 #end
 
 #macro (execute $execute)
-  #updateCodeProperty ('Structure.Code.CurriculumClass', 'Structure.Code.CurriculumTemplate', $execute)
-  #updateCodeProperty ('Structure.Code.MScCurriculumClass', 'Structure.Code.MScCurriculumTemplate', $execute)
+  #updateCodeProperty ('Structure.CurriculumClass', 'Structure.CurriculumTemplate', $execute)
+  #updateCodeProperty ('Structure.MScCurriculumClass', 'Structure.MScCurriculumTemplate', $execute)
 #end
 
 #if ("$!request.simulate" == 'true')
@@ -106,10 +106,6 @@
   #execute(true)
 #else
   {{html clean="false"}}&lt;a href="$doc.getURL('view', 'simulate=true')" class='button'&gt;Simulate&lt;/a&gt;{{/html}}
-#end
-
-#macro (getInitialResults)
-
 #end
 {{/velocity}}
 </content>
