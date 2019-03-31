@@ -44,23 +44,24 @@
   |=C|=S|=L|=(% rowspan="2" %)Cr|=C|=S|=L|=(% rowspan="2" %)Cr|=(% rowspan="3" %)Sem. I|=(% rowspan="3" %)Sem. II
   |=(% colspan="3" %)hours/week|=(% colspan="3" %)hours/week
   |=(% colspan="15" %)COMPULSORY
-  #getCourses('OB' $yearOfStudy 'Bachelor' $year $totals)
+  #getCourses('OB' $yearOfStudy $year $totals)
   #set ($tComp = $totals)
   | | |=(% colspan="15" %)NONCOMPULSORY
-  #getCourses('OP' $yearOfStudy 'Bachelor' $year $totals)
+  #getCourses('OP' $yearOfStudy $year $totals)
   #set ($tNComp = $totals)
   | | |(% colspan="7" %)TOTAL COMPULSORY|#foreach($total in $tComp)$total|#end|
   | | |(% colspan="7" %)TOTAL NONCOMPULSORY|#foreach($total in $tNComp)$total|#end|
   | | |(% colspan="15" %)**Optional Course x**
-  #getCourses('QQ' $yearOfStudy 'Bachelor' $year $totals)
+  #getCourses('QQ' $yearOfStudy $year $totals)
+  ## TODO: Find the right identifier for the `facultative` courses
   #set ($tOpt = $totals)
   | | |(% colspan="7" %)TOTAL OPTIONAL|#foreach($total in $tOpt)$total|#end|
 #end
 
-#macro (getCourses $courseType $yearOfStudy $typeOfDegree $year $totals)
+#macro (getCourses $courseType $yearOfStudy $year $totals)
   #set ($totals = [0,0,0,0,0,0,0,0])
   #set ($statement = "select doc.fullName, description.code, description.Semester, description.HoursPerWeek, description.CourseHoursPerWeek, description.LabHoursPerWeek, description.Credits from Document doc, Document doc1, doc.object(Structure.Code.CourseOverviewClass) as overview,  doc1.object(Structure.Code.CourseClass) as description where overview.courseDescription = doc1.fullName and description.CourseType = :courseType and description.YearofStudy = :yearOfStudy and description.TypeofDegree = :typeOfDegree and doc1.fullName like :year order by description.code asc")
-  #set ($results = $services.query.xwql($statement).bindValue('courseType', $courseType).bindValue('yearOfStudy', $yearOfStudy).bindValue('typeOfDegree', $typeOfDegree).bindValue('year', "%$year").execute())
+  #set ($results = $services.query.xwql($statement).bindValue('courseType', $courseType).bindValue('yearOfStudy', $yearOfStudy).bindValue('typeOfDegree', $doc.getValue('typeOfDegree').trim()).bindValue('year', "%$year").execute())
   #foreach ($result in $results)
     #set ($index = $foreach.index + 1)
     #set ($code = $result[1])
@@ -97,38 +98,18 @@
 #end
 
 #macro (displayGraduation)
-  (% class="doOddEven grid" id="tableid" %)
-  (% class="sortHeader" %)|=(% rowspan="4" %)Nr.|=(% rowspan="4" %)**Code** |=(% colspan="7" rowspan="3" %)**Course Name**|=(% colspan="4" %)**Sem. I**|=(% colspan="4" %)**Sem. II**|=(% colspan="2" %)**Examination Method**
-  |=C|=S|=L|=(% rowspan="2" %)Cr|=C|=S|=L|=(% rowspan="2" %)Cr|=(% rowspan="3" %)Sem. I|=(% rowspan="3" %)Sem. II
-  |=(% colspan="3" %)hours/week|=(% colspan="3" %)hours/week
-  |=(% colspan="15" %)COMPULSORY
-  |1| |(% colspan="7" %)Graduation Exam| | | | | | | |5| |E
+  ## TODO: Find the proper parameters to get the graduation details.
+  ## A Course page should be created foreach entry for better data manipulation.
 #end
 
 #macro (displayPedagogicalModule)
-  (% class="doOddEven grid" id="tableid" %)
-  (% class="sortHeader" %)|=(% rowspan="3" %)Nr.|=(% rowspan="3" %)**Code** |=(% colspan="7" rowspan="3" %)**Course Name**|=(% colspan="4" %)**Sem. I**|=(% colspan="4" %)**Sem. II**|=(% colspan="2" %)**Examination Method**
-  |=C|=S|=L|=(% rowspan="2" %)Cr|=C|=S|=L|=(% rowspan="2" %)Cr|=(% rowspan="3" %)Sem. I|=(% rowspan="3" %)Sem. II
-  |=(% colspan="3" %)hours/week|=(% colspan="3" %)hours/week
-  |=(% colspan="19" %)1^^st^^ Year
-  |1|CS1114F|(% colspan="7" %)Educational Psychology|2|2| |5| | | | |E| 
-  |2|CS1115F|(% colspan="7" %)Pedagogy I (Foundations of pedagogy+  
-  Evaluation Theory and methodology)| | | | |2|2| |5| |E
-  | | |(% colspan="7" %)TOTAL NONCOMPULSORY|2|2|0|5|2|2|0|5| | 
-  |=(% colspan="19" %)2^^nd^^ Year
-  |3|CS2113F|(% colspan="7" %)Pedagogy II
-  (Instruction theory and methodology +
-  Evaluation theory and methodology)|2|2| |5| | | | |E| 
-  |4|CS2214F|(% colspan="7" %)Teaching Techniques for Computer Science| | | | |2|2| |5| |E
-  | | |(% colspan="7" %)TOTAL NONCOMPULSORY|2|2|0|5|2|2|0|5| | 
-  |=(% colspan="19" %)3^^rd^^ Year
-  |5|CS3113F|(% colspan="7" %)Computer Assisted Education|1|1| |2| | | | |CO| 
-  |6|CS3114F|(% colspan="7" %)Teaching Traineeship 1
-  (compulsory pre-higher education)| |3| |3| | | | |CO| 
-  |7|CS3215F|(% colspan="7" %)Class management| | | | |1|1| |3| |E
-  |8|CS3216F|(% colspan="7" %)Teaching Traineeship 2
-  (compulsory pre-higher education)| | | | | |3| |2| |CO
-  | | |(% colspan="7" %)TOTAL NONCOMPULSORY|1|4|0|5|1|4|0|5| | 
+  ## TODO: Find the proper parameters to get the pedagogical module details.
+  ## A Course page should be created foreach entry for better data manipulation.
+#end
+
+#macro (displayCoursePackages)
+  ## TODO: Find the proper parameters to get the course package details.
+  ## A Course page should be created foreach entry for better data manipulation.
 #end
 {{/velocity}}
 
@@ -143,14 +124,23 @@
 ===2^^nd^^ Year===
 #displayYear('2')
 
-===3^^rd^^ Year===
-#displayYear('3')
+#if ($doc.getValue('typeOfDegree').trim().equals('Bachelor'))
+dasd
+  ===3^^rd^^ Year===
+  #displayYear('3')
 
-===Graduation===
-#displayGraduation()
+  ===Graduation===
+  #displayGraduation()
 
-===Pedagogical Module===
-#displayPedagogicalModule()
+  ===Pedagogical Module===
+  #displayPedagogicalModule()
+#else
+   ===Graduation===
+  #displayGraduation()
+
+  ===Course Packages===
+  #displayCoursePackages()
+#end
 {{/velocity}}</content>
   <object>
     <name>Structure.Code.CurriculumSheet</name>

@@ -36,12 +36,79 @@
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
   <hidden>true</hidden>
-  <content>{{include reference="Structure.Code.Migrations.Macros"/}}
+  <content>{{velocity output="false"}}
+#macro (getInitialResults $originalXClass)
+  * Data pages to migrate:
+  #set ($originalTemplate = $originalXClass.replace('Class', 'Template'))
+  #set ($statement = "from doc.object($originalXClass) as changes where doc.fullName &lt;&gt; '$originalTemplate'")
+  #set ($results = $services.query.xwql($statement).execute())
+  #if ($results.size() &gt; 0)
+    #foreach ($result in $results)
+      ** [[$result]]
+    #end
+  #else
+    ** No data pages to migrate!
+  #end
+
+  * Old structure pages to remove:
+  #set ($structurePages = [$originalXClass, $originalXClass.replace('Class', 'Sheet'), $originalXClass.replace('Class', 'Template')])
+  #foreach ($structurePage in $structurePages)
+    #set ($count = 0)
+    #if (!$xwiki.getDocument($structurePage).isNew())
+      ** [[$structurePage]]
+      #set ($count = $count + 1)
+    #end
+  #end
+  #if ($count == 0)
+    ** No structure pages to remove!
+  #end
+#end
+
+#macro (executeMigration $originalXClass $newXClass $typeOfDegree)
+  #set ($originalTemplate = $originalXClass.replace('Class', 'Template'))
+  #set ($statement = "from doc.object($originalXClass) as changes where doc.fullName &lt;&gt; '$originalTemplate'")
+  #set ($results = $services.query.xwql($statement).execute())
+  #foreach ($item in $results)
+    #set ($itemDoc = $xwiki.getDocument($item))
+    #set ($originalXObject = $itemDoc.getObject($originalXClass))
+    #if ("$!itemDoc.getObject($newXClass)" == '')
+      #set ($newXObject = $itemDoc.newObject($newXClass))
+      #foreach ($property in $originalXObject.getProperties())
+        #set ($discard = $newXObject.set($property.name, $property.value))
+      #end
+      #set ($discard = $itemDoc.removeObject($originalXObject))
+      #set ($discard = $newXObject.set('typeOfDegree', $typeOfDegree))
+      #set ($discard = $itemDoc.save("Renaming [$originalXClass] object into [$newXClass]", true))
+      [[$item]] migrated!
+    #else
+      ** New object already exist, doing nothing...
+    #end
+  #end
+  ## Delete old structure (class, sheet, template)
+  * Old structure pages to be removed:
+  #set ($structurePages = [$originalXClass, $originalXClass.replace('Class', 'Sheet'), $originalXClass.replace('Class', 'Template')])
+  #foreach ($structurePage in $structurePages)
+    #if (!$xwiki.getDocument($structurePage).isNew())
+      #set ($discard = $xwiki.getDocument($structurePage).delete())
+    #end
+  #end
+#end
+{{/velocity}}
 
 {{velocity}}
-#set ($originalXClass = 'Structure.CurriculumClass')
-#set ($newXClass = 'Structure.Code.CurriculumClass')
+{{info}}Migrate the old **Structure.CurriculumClasss** and **Structure.MScCurriculumClass** objects to the new **Structure.Code.CurriculumClass**. A new **type of degree** property is added to distinguish the **Bachelor** from **Master** curriculum.{{/info}}
 
-#migrate ($originalXClass $newXClass)
+#if ("$!request.confirm" != 'true')
+  #getInitialResults('Structure.CurriculumClass')
+
+  #getInitialResults('Structure.MScCurriculumClass')
+  #if ($results.size() &gt; 0)
+    {{html clean="false"}}&lt;a href="$doc.getURL('view', 'confirm=true')" class='button'&gt;Start&lt;/a&gt;{{/html}}
+  #end
+#else
+  #executeMigration ('Structure.CurriculumClass' 'Structure.Code.CurriculumClass' 'Bachelor')
+
+  #executeMigration ('Structure.MScCurriculumClass' 'Structure.Code.CurriculumClass', 'Master')
+#end
 {{/velocity}}</content>
 </xwikidoc>

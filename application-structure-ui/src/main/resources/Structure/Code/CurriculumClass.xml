@@ -80,6 +80,30 @@
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
     </StartYear>
+    <typeOfDegree>
+      <cache>0</cache>
+      <customDisplay/>
+      <defaultValue/>
+      <disabled>0</disabled>
+      <displayType>select</displayType>
+      <freeText/>
+      <hint/>
+      <multiSelect>0</multiSelect>
+      <name>typeOfDegree</name>
+      <number>3</number>
+      <picker>1</picker>
+      <prettyName>Type of degree</prettyName>
+      <relationalStorage>0</relationalStorage>
+      <separator> </separator>
+      <separators>|, </separators>
+      <size>1</size>
+      <sort/>
+      <unmodifiable>0</unmodifiable>
+      <validationMessage/>
+      <validationRegExp/>
+      <values> Bachelor=Bachelor|Master=Master</values>
+      <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+    </typeOfDegree>
   </class>
   <object>
     <name>Structure.Code.CurriculumClass</name>
