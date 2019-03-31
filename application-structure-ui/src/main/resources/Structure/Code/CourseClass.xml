@@ -1965,7 +1965,7 @@
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
-      <values> Bachelor=Bachelor|Master=Master</values>
+      <values>Bachelor=Bachelor|Master=Master</values>
       <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
     </TypeofDegree>
     <YearofStudy>
