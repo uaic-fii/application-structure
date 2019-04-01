@@ -1,0 +1,106 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<!--
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+-->
+
+<xwikidoc version="1.3" reference="Structure.Code.Migrations.FixCoursePagesParent" locale="">
+  <web>Structure.Code.Migrations</web>
+  <name>FixCoursePagesParent</name>
+  <language/>
+  <defaultLanguage/>
+  <translation>0</translation>
+  <creator>xwiki:XWiki.Admin</creator>
+  <parent>xwiki:Structure.MSOfficeProgramming2016.WebHome.WebHome</parent>
+  <author>xwiki:XWiki.Admin</author>
+  <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+  <version>1.1</version>
+  <title>6. Fix course pages parent</title>
+  <comment/>
+  <minorEdit>false</minorEdit>
+  <syntaxId>xwiki/2.1</syntaxId>
+  <hidden>true</hidden>
+  <content>{{velocity output="false"}}
+#macro (getInitialResults $originalXClass)
+  #set ($class = $xwiki.getClass($originalXClass))
+  * Data pages to migrate:
+  #set ($originalTemplate = $originalXClass.replace('Class', 'Template'))
+  #set ($statement = "from doc.object($originalXClass) as changes where doc.fullName &lt;&gt; '$originalTemplate'")
+  #set ($results = $services.query.xwql($statement).execute())
+  #if ($results.size() &gt; 0)
+    #foreach ($result in $results)
+      #set ($overviewDoc = $xwiki.getDocument($result))
+      ** [[$overviewDoc]]
+      #foreach ($prop in $class.properties)
+        #if ($prop.type != 'UsersClass' &amp;&amp; $overviewDoc.getValue($prop.name) != '')
+          #set ($childDoc = $xwiki.getDocument($overviewDoc.getValue($prop.name)))
+          #if ($xwiki.exists($childDoc))
+            *** $childDoc
+          #end
+        #end
+      #end
+    #end
+  #else
+    ** No data pages to migrate!
+  #end
+#end
+
+#macro (executeMigration $originalXClass)
+  #set ($class = $xwiki.getClass($originalXClass))
+  #set ($originalTemplate = $originalXClass.replace('Class', 'Template'))
+  #set ($statement = "from doc.object($originalXClass) as changes where doc.fullName &lt;&gt; '$originalTemplate'")
+  #set ($results = $services.query.xwql($statement).execute())
+  #foreach ($result in $results)
+    #set ($overviewDoc = $xwiki.getDocument($result))
+    #set ($overviewObj = $overviewDoc.getObject($originalXClass))
+    * [[$overviewDoc]]
+    #foreach ($prop in $class.properties)
+      #if ($prop.type != 'UsersClass')
+        #set ($childDoc = $xwiki.getDocument($overviewDoc.getValue($prop.name)))
+        #if ($xwiki.exists($childDoc))
+          #set ($oldDocRef = $childDoc.documentReference)
+          #set ($parentReference = $overviewDoc.documentReference)
+          #set ($parentSpaceReference = $parentReference.lastSpaceReference)
+          #set ($newDocRef = $services.model.createDocumentReference($oldDocRef.name, $parentSpaceReference))
+          #set ($renameRequest = $services.refactoring.createRenameRequest($oldDocRef, $newDocRef))
+          #set ($discard = $renameRequest.setDeleteSource(true))
+          #set ($discard = $renameRequest.setAutoRedirect(false))
+          #set ($discard = $services.refactoring.rename($renameRequest).join())
+          #set ($discard = $overviewObj.set($prop.name, $services.model.serialize($newDocRef)))
+        #end
+      #end
+    #end
+    #set ($discard = $overviewDoc.save('Update the page properties after their rename'))
+  #end
+#end
+{{/velocity}}
+
+{{velocity}}
+{{info}}Move the pages used in **CourseClass** properties (course web, course description, course intranet, etc) under the related **CourseOverviewClass** (as children, in order to build the proper hierarchy).{{/info}}
+
+#if ("$!request.confirm" != 'true')
+  #getInitialResults('Structure.Code.CourseOverviewClass')
+  #if ($results.size() &gt; 0)
+    {{html clean="false"}}&lt;a href="$doc.getURL('view', 'confirm=true')" class='button'&gt;Start&lt;/a&gt;{{/html}}
+  #end
+#else
+  #executeMigration('Structure.Code.CourseOverviewClass')
+#end
+{{/velocity}}</content>
+</xwikidoc>

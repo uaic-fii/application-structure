@@ -20,9 +20,9 @@
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
 -->
 
-<xwikidoc version="1.3" reference="Structure.Code.Migrations.Courses" locale="">
+<xwikidoc version="1.3" reference="Structure.Code.Migrations.CurriculumAndCourseOverviewToNonTerminal" locale="">
   <web>Structure.Code.Migrations</web>
-  <name>Courses</name>
+  <name>CurriculumAndCourseOverviewToNonTerminal</name>
   <language/>
   <defaultLanguage/>
   <translation>0</translation>
@@ -31,7 +31,7 @@
   <author>xwiki:XWiki.Admin</author>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
   <version>1.1</version>
-  <title>1. Migrate Course pages</title>
+  <title>5. Migrate Curriculum and CourseOverview to non-terminal</title>
   <comment/>
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
@@ -49,66 +49,35 @@
   #else
     ** No data pages to migrate!
   #end
-
-  * Old structure pages to remove:
-  #set ($structurePages = [$originalXClass, $originalXClass.replace('Class', 'Sheet'), $originalXClass.replace('Class', 'Template')])
-  #foreach ($structurePage in $structurePages)
-    #set ($count = 0)
-    #if (!$xwiki.getDocument($structurePage).isNew())
-      ** [[$structurePage]]
-      #set ($count = $count + 1)
-    #end
-  #end
-  #if ($count == 0)
-    ** No structure pages to remove!
-  #end
 #end
 
-#macro (executeMigration $originalXClass $newXClass)
+#macro (executeMigration $originalXClass)
   #set ($originalTemplate = $originalXClass.replace('Class', 'Template'))
   #set ($statement = "from doc.object($originalXClass) as changes where doc.fullName &lt;&gt; '$originalTemplate'")
   #set ($results = $services.query.xwql($statement).execute())
   #foreach ($item in $results)
-    #set ($itemDoc = $xwiki.getDocument($item))
-    #set ($originalXObject = $itemDoc.getObject($originalXClass))
-    #if ("$!itemDoc.getObject($newXClass)" == '')
-      #set ($newXobject = $itemDoc.newObject($newXClass))
-      #foreach ($property in $originalXObject.getProperties())
-        #set ($discard = $newXobject.set($property.name, $property.value))
-      #end
-      #set ($discard = $itemDoc.removeObject($originalXObject))
-      #set ($discard = $itemDoc.save("Renaming [$originalXClass] object into [$newXClass]", true))
-      [[$item]] migrated!
-    #else
-      ** New object already exist, doing nothing...
-    #end
-  #end
-  ## Delete old structure (class, sheet, template)
-  * Old structure pages to be removed:
-  #set ($structurePages = [$originalXClass, $originalXClass.replace('Class', 'Sheet'), $originalXClass.replace('Class', 'Template')])
-  #foreach ($structurePage in $structurePages)
-    #if (!$xwiki.getDocument($structurePage).isNew())
-      #set ($discard = $xwiki.getDocument($structurePage).delete())
-    #end
-  #end
-#end
-
-#macro (migrate $originalXClass $newXClass)
-
-  {{info}}Migrate the old **$originalXClass** objects to the new **$newXClass**.{{/info}}
-
-  #if ("$!request.confirm" != 'true')
-    #getInitialResults($originalXClass)
-    #if ($results.size() &gt; 0)
-      {{html clean="false"}}&lt;a href="$doc.getURL('view', 'confirm=true')" class='button'&gt;Start&lt;/a&gt;{{/html}}
-    #end
-  #else
-    #executeMigration($originalXClass $newXClass)
+    #set ($oldDocRef = $services.model.resolveDocument($item))
+    #set ($newDocRef = $services.model.resolveDocument("${item}.WebHome"))
+    #set ($renameRequest = $services.refactoring.createRenameRequest($oldDocRef, $newDocRef))
+    #set ($discard = $renameRequest.setDeleteSource(true))
+    #set ($discard = $renameRequest.setAutoRedirect(false))
+    #set ($discard = $services.refactoring.rename($renameRequest).join())
   #end
 #end
 {{/velocity}}
 
 {{velocity}}
-#migrate ('Structure.CourseClass' 'Structure.Code.CourseClass')
+{{info}}Migrate the **Curriculum** and **Course Overview** pages to Non-Terminal pages in order to allow children creation.{{/info}}
+
+#if ("$!request.confirm" != 'true')
+  #getInitialResults('Structure.Code.CurriculumClass')
+  #getInitialResults('Structure.Code.CourseOverviewClass')
+  #if ($results.size() &gt; 0)
+    {{html clean="false"}}&lt;a href="$doc.getURL('view', 'confirm=true')" class='button'&gt;Start&lt;/a&gt;{{/html}}
+  #end
+#else
+  #executeMigration('Structure.Code.CurriculumClass')
+  #executeMigration('Structure.Code.CourseOverviewClass')
+#end
 {{/velocity}}</content>
 </xwikidoc>
