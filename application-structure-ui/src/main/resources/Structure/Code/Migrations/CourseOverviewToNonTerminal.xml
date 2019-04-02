@@ -20,28 +20,31 @@
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
 -->
 
-<xwikidoc version="1.3" reference="Structure.Code.Migrations.CurriculumAndCourseOverviewToNonTerminal" locale="">
+<xwikidoc version="1.3" reference="Structure.Code.Migrations.CourseOverviewToNonTerminal" locale="">
   <web>Structure.Code.Migrations</web>
-  <name>CurriculumAndCourseOverviewToNonTerminal</name>
+  <name>CourseOverviewToNonTerminal</name>
   <language/>
   <defaultLanguage/>
   <translation>0</translation>
   <creator>xwiki:XWiki.Admin</creator>
-  <parent>xwiki:Structure.GraphAlgorithms2016.WebHome.WebHome</parent>
+  <parent>WebHome</parent>
   <author>xwiki:XWiki.Admin</author>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
   <version>1.1</version>
-  <title>5. Migrate Curriculum and CourseOverview to non-terminal</title>
+  <title>5. Migrate CourseOverview to Non-Terminal</title>
   <comment/>
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
   <hidden>true</hidden>
   <content>{{velocity output="false"}}
-#macro (getInitialResults $originalXClass)
-  * Data pages to migrate:
+#macro (getResults $originalXClass)
   #set ($originalTemplate = $originalXClass.replace('Class', 'Template'))
   #set ($statement = "from doc.object($originalXClass) as changes where doc.fullName &lt;&gt; '$originalTemplate'")
   #set ($results = $services.query.xwql($statement).execute())
+#end
+#macro (getInitialResults $originalXClass)
+  * Data pages to migrate:
+  #getResults()
   #if ($results.size() &gt; 0)
     #foreach ($result in $results)
       ** [[$result]]
@@ -52,14 +55,15 @@
 #end
 
 #macro (executeMigration $originalXClass)
-  #set ($originalTemplate = $originalXClass.replace('Class', 'Template'))
-  #set ($statement = "from doc.object($originalXClass) as changes where doc.fullName &lt;&gt; '$originalTemplate'")
-  #set ($results = $services.query.xwql($statement).execute())
+  #getResults()
   #foreach ($item in $results)
     #set ($oldDocRef = $services.model.resolveDocument($item))
-    #set ($newDocRef = $services.model.resolveDocument("${item}.WebHome"))
+    #set ($newDocRef = $services.model.createDocumentReference('WebHome', $services.model.resolveSpace($oldDocRef)))
+    |$newDocRef|$newDocRef
     #set ($renameRequest = $services.refactoring.createRenameRequest($oldDocRef, $newDocRef))
+    ## Make sure that everything remains clean after refactoring.
     #set ($discard = $renameRequest.setDeleteSource(true))
+    #set ($discard = $renameRequest.setUpdateParentField(false))
     #set ($discard = $renameRequest.setAutoRedirect(false))
     #set ($discard = $services.refactoring.rename($renameRequest).join())
   #end
@@ -67,16 +71,14 @@
 {{/velocity}}
 
 {{velocity}}
-{{info}}Migrate the **Curriculum** and **Course Overview** pages to Non-Terminal pages in order to allow children creation.{{/info}}
+{{info}}Migrate the **Course Overview** pages to Non-Terminal pages in order to allow children creation.{{/info}}
 
 #if ("$!request.confirm" != 'true')
-  #getInitialResults('Structure.Code.CurriculumClass')
   #getInitialResults('Structure.Code.CourseOverviewClass')
   #if ($results.size() &gt; 0)
     {{html clean="false"}}&lt;a href="$doc.getURL('view', 'confirm=true')" class='button'&gt;Start&lt;/a&gt;{{/html}}
   #end
 #else
-  #executeMigration('Structure.Code.CurriculumClass')
   #executeMigration('Structure.Code.CourseOverviewClass')
 #end
 {{/velocity}}</content>

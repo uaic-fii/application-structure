@@ -36,14 +36,12 @@
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
   <hidden>true</hidden>
-  <content>{{info}}This migrations script applies to all the pages that have Courses objects. Courses codes are hard-coded in the Curriculum/MScCurriculum objects while they should belong to the course description pages, along with all the other properties. (!) Pay attention to Courses that use the same page for more than 1 entry (English I, English II -&gt; create a new description page?){{/info}}
+  <content>{{info}}This migrations script applies to all the pages that have Courses objects. Courses codes are hard-coded in the Curriculum/MScCurriculum objects while they should belong to the course description pages, along with all the other properties. (!) Pay attention to Courses that use the same page for more than 1 entry (English I, English II -&gt; create a new description page?)
+(!) This script depends on Course Overview migration, as it needs to read the desription page from objects{{/info}}
 
 {{velocity}}
-
-
 #macro (updateCodeProperty $class $template $execute)
   #set ($xClass = $xwiki.getClass($class))
-----
   #set ($statement = "from doc.object($class) as obj where doc.fullName &lt;&gt; '$template'")
   #set ($results = $services.query.xwql($statement).execute())
   #foreach ($result in $results)
@@ -53,10 +51,9 @@
         #foreach ($line in $document.getValue($prop.name).split('\n'))
           #set ($lineParts = $line.split('\|'))
           #if ($lineParts.size() == 14)
-            #set ($number = $lineParts[1].trim())
-            #if ($number != '')
+            #set ($code = $lineParts[2].trim())
+            #if ($code != '')
               #set ($courseName = 'N/A')
-              #set ($code = $lineParts[2])
               #set ($course = $lineParts[3].split('&gt;&gt;'))
               ## Courses like Sport, Optional 1 (withour information)
               #if (!$course[0].contains('[['))
@@ -70,7 +67,7 @@
                   #set ($courseName = $course[1].split('\]\]')[0])
                 #end
               #end
-              * $number - $courseTitle - $code
+              * $code:  $courseTitle
               #if ($xwiki.exists($courseName))
                 #set ($courseDoc = $xwiki.getDocument($courseName))
                 #set ($courseDescriptionDoc = $xwiki.getDocument($courseDoc.getValue('courseDescription')))
@@ -80,7 +77,6 @@
                     #set ($obj = $courseDescriptionDoc.getObject('Structure.Code.CourseClass'))
                     #set ($discard = $obj.set('code', $code))
                     #set ($discard = $courseDescriptionDoc.save("Updated [Code] property to $code."))
-                    Updated [Code] property to $code.
                   #end
                 #end
               #else

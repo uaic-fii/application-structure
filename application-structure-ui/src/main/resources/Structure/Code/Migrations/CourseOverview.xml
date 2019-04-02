@@ -39,6 +39,11 @@
   <content>{{velocity}}
 #migrate()
 
+#macro (getResults)
+  #set ($statement = "where doc.content like '%[[Course Description&gt;&gt;%' and doc.fullName &lt;&gt; '$doc.fullName'")
+  #set ($results = $services.query.xwql($statement).execute())
+#end
+
 #macro (migrate)
 
   {{info}}Migrate the old **content** course overview page to a new **data structure** page.{{/info}}
@@ -55,8 +60,7 @@
 
 #macro (getInitialResults)
   * Data pages to migrate:
-  #set ($statement = "where doc.content like '%[[Course Description&gt;&gt;%' and doc.fullName &lt;&gt; '$doc.fullName'")
-  #set ($results = $services.query.xwql($statement).execute())
+  #getResults()
   #if ($results.size() &gt; 0)
     #foreach ($result in $results)
       ** [[$result]]
@@ -67,7 +71,7 @@
 #end
 
 #macro (executeMigration)
-  #set ($results = $services.query.xwql("where doc.content like '%[[Course Description&gt;&gt;%' and doc.fullName &lt;&gt; '$doc.fullName'").execute())
+  #getResults()
   #foreach ($result in $results)
     #set ($valuesMap = {})
   -----
