@@ -54,33 +54,57 @@
             #set ($code = $lineParts[2].trim())
             #if ($code != '')
               #set ($courseName = 'N/A')
+              #set ($courseDescriptionName = '')
               #set ($course = $lineParts[3].split('&gt;&gt;'))
-              ## Courses like Sport, Optional 1 (withour information)
+              ## Courses like Sport, Optional 1 (without information)
               #if (!$course[0].contains('[['))
                 #set ($courseTitle = $course[0])
-              #else
+               #else
                 #set ($courseTitle = $course[0].split('\[\['))
                 #if ($courseTitle.size() == 1)
                   #set ($courseTitle = $courseTitle[0])
                 #else
                   #set ($courseTitle = $courseTitle[1])
                   #set ($courseName = $course[1].split('\]\]')[0])
-                #end
-              #end
-              * $code:  $courseTitle
-              #if ($xwiki.exists($courseName))
-                #set ($courseDoc = $xwiki.getDocument($courseName))
-                #set ($courseDescriptionDoc = $xwiki.getDocument($courseDoc.getValue('courseDescription')))
-                ** [[$courseDescriptionDoc]]
-                #if ($execute)
-                  #if ("$!courseDescriptionDoc.getValue('code')" == '')
-                    #set ($obj = $courseDescriptionDoc.getObject('Structure.Code.CourseClass'))
-                    #set ($discard = $obj.set('code', $code))
-                    #set ($discard = $courseDescriptionDoc.save("Updated [Code] property to $code."))
+                  ## Duplicate the course pages that have more versions (English I, English II, etc).
+                  #set ($romanNumbers = ['I', 'II', 'III', 'IV', 'V', 'VI'])
+                  #foreach ($romanNumber in $romanNumbers)
+                    #if ($courseTitle.endsWith($romanNumber))
+                      ## Special case: English Language -&gt; English I.
+                      #set ($courseDescriptionName = "Structure.${courseTitle.replace(' ', '').replace('Language', '')}Description")
+                    #end
                   #end
                 #end
+              #end
+              #if ($xwiki.exists($courseName))
+                #set ($courseDoc = $xwiki.getDocument($courseName))
+                #if ("$!courseDescriptionName" == '')
+                  #set ($courseDescriptionName = $courseDoc.getValue('courseDescription'))
+                #end
               #else
-                ** ($courseName)
+                ## Not sure why, but something is interpreted as (% colspan="7" %) and needs to be removed.
+                #set ($courseTitle = $courseTitle.replace('(% colspan="7" %)', ''))
+                #set ($courseDescriptionName = "Structure.${courseTitle.replace(' ', '')}")
+                ## Handle Sport I and II
+                #if ($courseTitle.contains('Sport'))
+                  #set ($courseDescriptionName = "${courseDescriptionName}I")
+                  #if ($xwiki.exists("${courseDescriptionName}Description"))
+                    #set ($courseDescriptionName = "${courseDescriptionName}I")
+                  #end
+                #end
+                #set ($courseDescriptionName = "${courseDescriptionName}Description")
+              #end
+              #set ($courseDescriptionDoc = $xwiki.getDocument($courseDescriptionName))
+              * $code: $courseTitle [[$courseDescriptionDoc]]
+              #if ($execute)
+                #if ("$!courseDescriptionDoc.getValue('code')" == '')
+                  #set ($obj = $courseDescriptionDoc.getObject('Structure.Code.CourseClass'))
+                  #if ("$!obj" == '')
+                    #set ($obj = $courseDescriptionDoc.newObject('Structure.Code.CourseClass'))
+                  #end
+                  #set ($discard = $obj.set('code', $code))
+                  #set ($discard = $courseDescriptionDoc.save("Updated [Code] property to $code."))
+                #end
               #end
             #end
           #end
