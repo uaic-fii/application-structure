@@ -95,7 +95,7 @@
                 #set ($courseDescriptionName = "${courseDescriptionName}Description")
               #end
               #set ($courseDescriptionDoc = $xwiki.getDocument($courseDescriptionName))
-              * $code: $courseTitle [[$courseDescriptionDoc]]
+              * $code: $courseTitle [[$courseDescriptionDoc]] #if ($courseDescriptionDoc.isNew())(Will be created)#end
               #if ($execute)
                 #if ("$!courseDescriptionDoc.getValue('code')" == '')
                   #set ($obj = $courseDescriptionDoc.getObject('Structure.Code.CourseClass'))

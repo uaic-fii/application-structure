@@ -79,6 +79,30 @@
         <validationRegExp/>
         <classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
       </StartYear>
+      <studyProgram>
+        <cache>0</cache>
+        <customDisplay/>
+        <defaultValue/>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <freeText/>
+        <hint/>
+        <multiSelect>0</multiSelect>
+        <name>studyProgram</name>
+        <number>4</number>
+        <picker>1</picker>
+        <prettyName>Study program</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators>|, </separators>
+        <size>1</size>
+        <sort/>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <values>Bachelor=Bachelor|MISS=MISS|MDS=MDS|MCL=MCL|MCO=MCO|MIS=MIS|</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </studyProgram>
       <typeOfDegree>
         <cache>0</cache>
         <customDisplay/>
@@ -100,7 +124,7 @@
         <unmodifiable>0</unmodifiable>
         <validationMessage/>
         <validationRegExp/>
-        <values> Bachelor=Bachelor|Master=Master</values>
+        <values>Bachelor=Bachelor|Master=Master</values>
         <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
       </typeOfDegree>
     </class>
@@ -109,6 +133,9 @@
     </property>
     <property>
       <StartYear/>
+    </property>
+    <property>
+      <studyProgram/>
     </property>
     <property>
       <typeOfDegree/>
