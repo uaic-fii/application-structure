@@ -96,21 +96,6 @@
     |$index|$code|(% colspan="7" %)[[$overviewDoc.title&gt;&gt;$overviewDoc]]|$!hpw1|$!chpw1|$!lhpw1|$!credits1|$!hpw2|$!chpw2|$!lhpw2|$!credits2|$!exam1|$!exam2
   #end
 #end
-
-#macro (displayGraduation)
-  ## TODO: Find the proper parameters to get the graduation details.
-  ## A Course page should be created foreach entry for better data manipulation.
-#end
-
-#macro (displayPedagogicalModule)
-  ## TODO: Find the proper parameters to get the pedagogical module details.
-  ## A Course page should be created foreach entry for better data manipulation.
-#end
-
-#macro (displayCoursePackages)
-  ## TODO: Find the proper parameters to get the course package details.
-  ## A Course page should be created foreach entry for better data manipulation.
-#end
 {{/velocity}}
 
 {{velocity}}
@@ -125,21 +110,8 @@
 #displayYear('2')
 
 #if ($doc.getValue('typeOfDegree').trim().equals('Bachelor'))
-dasd
   ===3^^rd^^ Year===
   #displayYear('3')
-
-  ===Graduation===
-  #displayGraduation()
-
-  ===Pedagogical Module===
-  #displayPedagogicalModule()
-#else
-   ===Graduation===
-  #displayGraduation()
-
-  ===Course Packages===
-  #displayCoursePackages()
 #end
 {{/velocity}}</content>
   <object>
