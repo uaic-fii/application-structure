@@ -46,9 +46,12 @@
   * Data pages to migrate:
   #getResults()
   #if ($results.size() &gt; 0)
-    #foreach ($result in $results)
-      ** [[$result]]
+    #foreach ($item in $results)
+      #set ($oldDocRef = $services.model.resolveDocument($item))
+      #set ($newDocRef = $services.model.createDocumentReference('WebHome', $services.model.resolveSpace($oldDocRef)))
+      |$oldDocRef|$newDocRef
     #end
+
   #else
     ** No data pages to migrate!
   #end
@@ -59,7 +62,7 @@
   #foreach ($item in $results)
     #set ($oldDocRef = $services.model.resolveDocument($item))
     #set ($newDocRef = $services.model.createDocumentReference('WebHome', $services.model.resolveSpace($oldDocRef)))
-    |$newDocRef|$newDocRef
+    |$oldDocRef|$newDocRef
     #set ($renameRequest = $services.refactoring.createRenameRequest($oldDocRef, $newDocRef))
     ## Make sure that everything remains clean after refactoring.
     #set ($discard = $renameRequest.setDeleteSource(true))
