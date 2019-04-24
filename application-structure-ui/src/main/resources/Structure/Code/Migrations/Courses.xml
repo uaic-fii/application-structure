@@ -78,6 +78,7 @@
         #set ($discard = $newXobject.set($property.name, $property.value))
       #end
       #set ($discard = $itemDoc.removeObject($originalXObject))
+      #set ($discard = $itemDoc.setTitle($newXobject.getValue('CourseName')))
       #set ($discard = $itemDoc.save("Renaming [$originalXClass] object into [$newXClass]", true))
       [[$item]] migrated!
     #else

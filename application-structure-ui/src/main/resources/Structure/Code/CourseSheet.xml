@@ -39,16 +39,8 @@
   <content>{{velocity}}
 ## You can modify this page to customize the presentation of your object.
 ## At first you should keep the default presentation and just save the document.
-
-$xwiki.ssfx.use("js/xwiki/table/table.css")
-
-#set($class = $doc.getObject('Structure.CourseClass').xWikiClass)
-
-## #set ($val = $util.parseInt($doc.display('Credits')) + 1)
-
-
+#set ($discard = $xwiki.ssfx.use("js/xwiki/table/table.css"))
 ==$doc.display('CourseName')==
-
 
 (% class="grid" %)
 |(% colspan="2" %)**1. Information about the Study Program**
@@ -59,7 +51,6 @@ $xwiki.ssfx.use("js/xwiki/table/table.css")
 |**1.5** Type of Degree|**$doc.display('TypeofDegree')**
 |**1.6** Study Program / Qualification|**$doc.display('StudyProgram')**
 
- 
 (% class="grid" %)
 |(% colspan="8" %)**2.  Information about the Course**
 |(% colspan="3" %)**2.1** Title|(% colspan="5" %)**$doc.display('CourseName')**
@@ -69,7 +60,6 @@ $xwiki.ssfx.use("js/xwiki/table/table.css")
 
 ~* //OB – Compulsory / OP – Optional//
 
- 
 (% class="grid" %)
 |(% colspan="6" %)**3. Total Estimated Time **(hours per semester and study activities)
 |**3.1** Number of hours per week|**$doc.display('HoursPerWeek')**|**3.2** Course hours|**$doc.display('CourseHoursPerWeek')**|**3.3** Laboratory hours|**$doc.display('LabHoursPerWeek')**
@@ -96,18 +86,17 @@ $xwiki.ssfx.use("js/xwiki/table/table.css")
 |(% colspan="2" %)**5. Conditions **(if applicable)
 |**5.1 **For courses|$doc.display('MaterielRequirementsCourse')
 |**5.2 **For laboratories|$doc.display('MaterielRequirementsLab')
- 
+
 (% class="grid" %)
 |(% colspan="2" %)**6. Specific competencies**
 |**Professional Competencies**|$doc.display('CompetenciesProfessional')
 |**Transversal competencies**|$doc.display('CompetenciesTransversal') 
 
- 
 (% class="grid" %)
 |(% colspan="2" %)**7. Objectives**
 |**7.1 General Objective**|$doc.display('ObjectivesGeneral')
 |**7.2 Specific objectives**|$doc.display('ObjectivesSpecific')
- 
+
 (% class="grid" %)
 |(% colspan="6" %)**8. Content**
 |**8.1**|(% colspan="2" %)**Course**|(% colspan="2" %)**Teaching methods**|**Notes**
@@ -154,6 +143,5 @@ $xwiki.ssfx.use("js/xwiki/table/table.css")
 |**10.4** Laboratory/Seminar|(% colspan="2" %)$doc.display('LabEvaluationCriteria')|(% colspan="2" %)$doc.display('LabEvaluationMethods')|(% colspan="2" %)$doc.display('LabEvaluationPercentage')
 |(% colspan="7" %)**10.6** Minimum performance standards
 |(% colspan="7" %)$doc.display('MinimumPerformanceStandards')
-
 {{/velocity}}</content>
 </xwikidoc>
