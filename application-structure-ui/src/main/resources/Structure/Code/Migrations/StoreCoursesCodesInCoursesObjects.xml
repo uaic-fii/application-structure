@@ -84,6 +84,15 @@
               #else
                 ## Not sure why, but something is interpreted as (% colspan="7" %) and needs to be removed.
                 #set ($courseTitle = $courseTitle.replace('(% colspan="7" %)', ''))
+                #set ($titleParts = $courseTitle.split(' '))
+                #set ($courseTitle = '')
+                #foreach ($titlePart in $titleParts)
+                  #if ($foreach.index != 0)
+                    #set ($courseTitle = "$courseTitle ${stringtool.capitalize($titlePart)}")
+                  #else
+                    #set ($courseTitle = "$courseTitle${stringtool.capitalize($titlePart)}")
+                  #end
+                #end
                 #set ($courseDescriptionName = "Structure.${courseTitle.replace(' ', '')}")
                 ## Handle Sport I and II
                 #if ($courseTitle.contains('Sport'))
@@ -95,7 +104,12 @@
                 #set ($courseDescriptionName = "${courseDescriptionName}Description")
               #end
               #set ($courseDescriptionDoc = $xwiki.getDocument($courseDescriptionName))
-              * $code: $courseTitle [[$courseDescriptionDoc]] #if ($courseDescriptionDoc.isNew())(Will be created)#end
+              * $code: $courseTitle
+              [[$courseDescriptionDoc]] #if($courseDescriptionDoc.isNew())(Will be created)#end
+
+              #if ($courseDescriptionDoc.title == '')
+                #set ($discard = $courseDescriptionDoc.setTitle($courseTitle))
+              #end
               #if ($execute)
                 #if ("$!courseDescriptionDoc.getValue('code')" == '')
                   #set ($obj = $courseDescriptionDoc.getObject('Structure.Code.CourseClass'))
