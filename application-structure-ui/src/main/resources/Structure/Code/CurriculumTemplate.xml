@@ -135,6 +135,12 @@
       <StartYear/>
     </property>
     <property>
+      <endYear/>
+    </property>
+    <property>
+      <startYear/>
+    </property>
+    <property>
       <studyProgram/>
     </property>
     <property>
