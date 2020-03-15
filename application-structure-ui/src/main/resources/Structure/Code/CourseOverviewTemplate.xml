@@ -61,6 +61,7 @@
         <freeText/>
         <hint/>
         <idField/>
+        <largeStorage>0</largeStorage>
         <multiSelect>0</multiSelect>
         <name>courseDescription</name>
         <number>2</number>
@@ -88,11 +89,12 @@
         <freeText/>
         <hint/>
         <idField/>
+        <largeStorage>0</largeStorage>
         <multiSelect>0</multiSelect>
         <name>courseIntranetArea</name>
         <number>3</number>
         <picker>1</picker>
-        <prettyName>Course Intranet Area</prettyName>
+        <prettyName>Course intranet area</prettyName>
         <relationalStorage>0</relationalStorage>
         <separator> </separator>
         <separators/>
@@ -113,6 +115,7 @@
         <displayType>input</displayType>
         <freeText/>
         <hint/>
+        <largeStorage>0</largeStorage>
         <multiSelect>1</multiSelect>
         <name>courseTeachers</name>
         <number>5</number>
@@ -153,11 +156,12 @@
         <freeText/>
         <hint/>
         <idField/>
+        <largeStorage>0</largeStorage>
         <multiSelect>0</multiSelect>
         <name>fiiIntranetArea</name>
         <number>4</number>
         <picker>1</picker>
-        <prettyName>FII Intranet Area</prettyName>
+        <prettyName>FII intranet area</prettyName>
         <relationalStorage>0</relationalStorage>
         <separator> </separator>
         <separators/>
@@ -178,6 +182,7 @@
         <displayType>input</displayType>
         <freeText/>
         <hint/>
+        <largeStorage>0</largeStorage>
         <multiSelect>1</multiSelect>
         <name>laboratoryTeachers</name>
         <number>6</number>

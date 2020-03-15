@@ -52,34 +52,34 @@
     <defaultWeb/>
     <nameField/>
     <validationScript/>
-    <EndYear>
+    <endYear>
       <customDisplay/>
       <disabled>0</disabled>
       <hint/>
-      <name>EndYear</name>
+      <name>endYear</name>
       <number>2</number>
       <numberType>long</numberType>
-      <prettyName>EndYear</prettyName>
+      <prettyName>End year</prettyName>
       <size>30</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
-    </EndYear>
-    <StartYear>
+    </endYear>
+    <startYear>
       <customDisplay/>
       <disabled>0</disabled>
       <hint/>
-      <name>StartYear</name>
+      <name>startYear</name>
       <number>1</number>
       <numberType>long</numberType>
-      <prettyName>StartYear</prettyName>
+      <prettyName>Start year</prettyName>
       <size>30</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
-    </StartYear>
+    </startYear>
     <studyProgram>
       <cache>0</cache>
       <customDisplay/>
@@ -88,6 +88,7 @@
       <displayType>select</displayType>
       <freeText/>
       <hint/>
+      <largeStorage>0</largeStorage>
       <multiSelect>0</multiSelect>
       <name>studyProgram</name>
       <number>4</number>
@@ -112,6 +113,7 @@
       <displayType>select</displayType>
       <freeText/>
       <hint/>
+      <largeStorage>0</largeStorage>
       <multiSelect>0</multiSelect>
       <name>typeOfDegree</name>
       <number>3</number>

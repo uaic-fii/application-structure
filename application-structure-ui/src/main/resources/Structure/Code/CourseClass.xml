@@ -52,1336 +52,1530 @@
     <defaultWeb/>
     <nameField/>
     <validationScript/>
-    <CompetenciesProfessional>
+    <code>
+      <customDisplay/>
+      <disabled>0</disabled>
+      <hint/>
+      <name>code</name>
+      <number>131</number>
+      <picker>1</picker>
+      <prettyName>Code</prettyName>
+      <size>30</size>
+      <unmodifiable>0</unmodifiable>
+      <validationMessage/>
+      <validationRegExp/>
+      <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+    </code>
+    <competenciesProfessional>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>CompetenciesProfessional</name>
+      <hint/>
+      <name>competenciesProfessional</name>
       <number>33</number>
       <picker>0</picker>
-      <prettyName>CompetenciesProfessional</prettyName>
+      <prettyName>Competencies professional</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </CompetenciesProfessional>
-    <CompetenciesTransversal>
+    </competenciesProfessional>
+    <competenciesTransversal>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>CompetenciesTransversal</name>
+      <hint/>
+      <name>competenciesTransversal</name>
       <number>34</number>
       <picker>0</picker>
-      <prettyName>CompetenciesTransversal</prettyName>
+      <prettyName>Competencies transversal</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </CompetenciesTransversal>
-    <ContentCourse1>
+    </competenciesTransversal>
+    <contentCourse1>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse1</name>
+      <hint/>
+      <name>contentCourse1</name>
       <number>37</number>
       <picker>0</picker>
-      <prettyName>ContentCourse1</prettyName>
+      <prettyName>Content course 1</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse1>
-    <ContentCourse10>
+    </contentCourse1>
+    <contentCourse10>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse10</name>
+      <hint/>
+      <name>contentCourse10</name>
       <number>64</number>
       <picker>0</picker>
-      <prettyName>ContentCourse10</prettyName>
+      <prettyName>Content course 10</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse10>
-    <ContentCourse10Methods>
+    </contentCourse10>
+    <contentCourse10Methods>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse10Methods</name>
+      <hint/>
+      <name>contentCourse10Methods</name>
       <number>65</number>
       <picker>0</picker>
-      <prettyName>ContentCourse10Methods</prettyName>
+      <prettyName>Content course 10 methods</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse10Methods>
-    <ContentCourse10Notes>
+    </contentCourse10Methods>
+    <contentCourse10Notes>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse10Notes</name>
+      <hint/>
+      <name>contentCourse10Notes</name>
       <number>66</number>
       <picker>0</picker>
-      <prettyName>ContentCourse10Notes</prettyName>
+      <prettyName>Content course 10 notes</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse10Notes>
-    <ContentCourse11>
+    </contentCourse10Notes>
+    <contentCourse11>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse11</name>
+      <hint/>
+      <name>contentCourse11</name>
       <number>67</number>
       <picker>0</picker>
-      <prettyName>ContentCourse11</prettyName>
+      <prettyName>Content course 11</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse11>
-    <ContentCourse11Methods>
+    </contentCourse11>
+    <contentCourse11Methods>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse11Methods</name>
+      <hint/>
+      <name>contentCourse11Methods</name>
       <number>68</number>
       <picker>0</picker>
-      <prettyName>ContentCourse11Methods</prettyName>
+      <prettyName>Content course 11 methods</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse11Methods>
-    <ContentCourse11Notes>
+    </contentCourse11Methods>
+    <contentCourse11Notes>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse11Notes</name>
+      <hint/>
+      <name>contentCourse11Notes</name>
       <number>69</number>
       <picker>0</picker>
-      <prettyName>ContentCourse11Notes</prettyName>
+      <prettyName>Content course 11 notes</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse11Notes>
-    <ContentCourse12>
+    </contentCourse11Notes>
+    <contentCourse12>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse12</name>
+      <hint/>
+      <name>contentCourse12</name>
       <number>70</number>
       <picker>0</picker>
-      <prettyName>ContentCourse12</prettyName>
+      <prettyName>Content course 12</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse12>
-    <ContentCourse12Methods>
+    </contentCourse12>
+    <contentCourse12Methods>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse12Methods</name>
+      <hint/>
+      <name>contentCourse12Methods</name>
       <number>71</number>
       <picker>0</picker>
-      <prettyName>ContentCourse12Methods</prettyName>
+      <prettyName>Content course 12 methods</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse12Methods>
-    <ContentCourse12Notes>
+    </contentCourse12Methods>
+    <contentCourse12Notes>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse12Notes</name>
+      <hint/>
+      <name>contentCourse12Notes</name>
       <number>72</number>
       <picker>0</picker>
-      <prettyName>ContentCourse12Notes</prettyName>
+      <prettyName>Content course 12 notes</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse12Notes>
-    <ContentCourse13>
+    </contentCourse12Notes>
+    <contentCourse13>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse13</name>
+      <hint/>
+      <name>contentCourse13</name>
       <number>73</number>
       <picker>0</picker>
-      <prettyName>ContentCourse13</prettyName>
+      <prettyName>Content course 13</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse13>
-    <ContentCourse13Methods>
+    </contentCourse13>
+    <contentCourse13Methods>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse13Methods</name>
+      <hint/>
+      <name>contentCourse13Methods</name>
       <number>74</number>
       <picker>0</picker>
-      <prettyName>ContentCourse13Methods</prettyName>
+      <prettyName>Content course 13 methods</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse13Methods>
-    <ContentCourse13Notes>
+    </contentCourse13Methods>
+    <contentCourse13Notes>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse13Notes</name>
+      <hint/>
+      <name>contentCourse13Notes</name>
       <number>75</number>
       <picker>0</picker>
-      <prettyName>ContentCourse13Notes</prettyName>
+      <prettyName>Content course 13 notes</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse13Notes>
-    <ContentCourse14>
+    </contentCourse13Notes>
+    <contentCourse14>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse14</name>
+      <hint/>
+      <name>contentCourse14</name>
       <number>76</number>
       <picker>0</picker>
-      <prettyName>ContentCourse14</prettyName>
+      <prettyName>Content course 14</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse14>
-    <ContentCourse14Methods>
+    </contentCourse14>
+    <contentCourse14Methods>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse14Methods</name>
+      <hint/>
+      <name>contentCourse14Methods</name>
       <number>77</number>
       <picker>0</picker>
-      <prettyName>ContentCourse14Methods</prettyName>
+      <prettyName>Content course 14 methods</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse14Methods>
-    <ContentCourse14Notes>
+    </contentCourse14Methods>
+    <contentCourse14Notes>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse14Notes</name>
+      <hint/>
+      <name>contentCourse14Notes</name>
       <number>78</number>
       <picker>0</picker>
-      <prettyName>ContentCourse14Notes</prettyName>
+      <prettyName>Content course 14 notes</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse14Notes>
-    <ContentCourse1Methods>
+    </contentCourse14Notes>
+    <contentCourse1Methods>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse1Methods</name>
+      <hint/>
+      <name>contentCourse1Methods</name>
       <number>38</number>
       <picker>0</picker>
-      <prettyName>ContentCourse1Methods</prettyName>
+      <prettyName>Content course 1 methods</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse1Methods>
-    <ContentCourse1Notes>
+    </contentCourse1Methods>
+    <contentCourse1Notes>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse1Notes</name>
+      <hint/>
+      <name>contentCourse1Notes</name>
       <number>39</number>
       <picker>0</picker>
-      <prettyName>ContentCourse1Notes</prettyName>
+      <prettyName>Content course 1 notes</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse1Notes>
-    <ContentCourse2>
+    </contentCourse1Notes>
+    <contentCourse2>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse2</name>
+      <hint/>
+      <name>contentCourse2</name>
       <number>40</number>
       <picker>0</picker>
-      <prettyName>ContentCourse2</prettyName>
+      <prettyName>Content course 2</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse2>
-    <ContentCourse2Methods>
+    </contentCourse2>
+    <contentCourse2Methods>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse2Methods</name>
+      <hint/>
+      <name>contentCourse2Methods</name>
       <number>41</number>
       <picker>0</picker>
-      <prettyName>ContentCourse2Methods</prettyName>
+      <prettyName>Content course 2 methods</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse2Methods>
-    <ContentCourse2Notes>
+    </contentCourse2Methods>
+    <contentCourse2Notes>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse2Notes</name>
+      <hint/>
+      <name>contentCourse2Notes</name>
       <number>42</number>
       <picker>0</picker>
-      <prettyName>ContentCourse2Notes</prettyName>
+      <prettyName>Content course 2 notes</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse2Notes>
-    <ContentCourse3>
+    </contentCourse2Notes>
+    <contentCourse3>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse3</name>
+      <hint/>
+      <name>contentCourse3</name>
       <number>43</number>
       <picker>0</picker>
-      <prettyName>ContentCourse3</prettyName>
+      <prettyName>Content course 3</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse3>
-    <ContentCourse3Methods>
+    </contentCourse3>
+    <contentCourse3Methods>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse3Methods</name>
+      <hint/>
+      <name>contentCourse3Methods</name>
       <number>44</number>
       <picker>0</picker>
-      <prettyName>ContentCourse3Methods</prettyName>
+      <prettyName>Content course 3 methods</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse3Methods>
-    <ContentCourse3Notes>
+    </contentCourse3Methods>
+    <contentCourse3Notes>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse3Notes</name>
+      <hint/>
+      <name>contentCourse3Notes</name>
       <number>45</number>
       <picker>0</picker>
-      <prettyName>ContentCourse3Notes</prettyName>
+      <prettyName>Content course 3 notes</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse3Notes>
-    <ContentCourse4>
+    </contentCourse3Notes>
+    <contentCourse4>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse4</name>
+      <hint/>
+      <name>contentCourse4</name>
       <number>46</number>
       <picker>0</picker>
-      <prettyName>ContentCourse4</prettyName>
+      <prettyName>Content course 4</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse4>
-    <ContentCourse4Methods>
+    </contentCourse4>
+    <contentCourse4Methods>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse4Methods</name>
+      <hint/>
+      <name>contentCourse4Methods</name>
       <number>47</number>
       <picker>0</picker>
-      <prettyName>ContentCourse4Methods</prettyName>
+      <prettyName>Content course 4 methods</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse4Methods>
-    <ContentCourse4Notes>
+    </contentCourse4Methods>
+    <contentCourse4Notes>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse4Notes</name>
+      <hint/>
+      <name>contentCourse4Notes</name>
       <number>48</number>
       <picker>0</picker>
-      <prettyName>ContentCourse4Notes</prettyName>
+      <prettyName>Content course 4 notes</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse4Notes>
-    <ContentCourse5>
+    </contentCourse4Notes>
+    <contentCourse5>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse5</name>
+      <hint/>
+      <name>contentCourse5</name>
       <number>49</number>
       <picker>0</picker>
-      <prettyName>ContentCourse5</prettyName>
+      <prettyName>Content course 5</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse5>
-    <ContentCourse5Methods>
+    </contentCourse5>
+    <contentCourse5Methods>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse5Methods</name>
+      <hint/>
+      <name>contentCourse5Methods</name>
       <number>50</number>
       <picker>0</picker>
-      <prettyName>ContentCourse5Methods</prettyName>
+      <prettyName>Content course 5 methods</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse5Methods>
-    <ContentCourse5Notes>
+    </contentCourse5Methods>
+    <contentCourse5Notes>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse5Notes</name>
+      <hint/>
+      <name>contentCourse5Notes</name>
       <number>51</number>
       <picker>0</picker>
-      <prettyName>ContentCourse5Notes</prettyName>
+      <prettyName>Content course 5 notes</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse5Notes>
-    <ContentCourse6>
+    </contentCourse5Notes>
+    <contentCourse6>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse6</name>
+      <hint/>
+      <name>contentCourse6</name>
       <number>52</number>
       <picker>0</picker>
-      <prettyName>ContentCourse6</prettyName>
+      <prettyName>Content course 6</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse6>
-    <ContentCourse6Methods>
+    </contentCourse6>
+    <contentCourse6Methods>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse6Methods</name>
+      <hint/>
+      <name>contentCourse6Methods</name>
       <number>53</number>
       <picker>0</picker>
-      <prettyName>ContentCourse6Methods</prettyName>
+      <prettyName>Content course 6 methods</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse6Methods>
-    <ContentCourse6Notes>
+    </contentCourse6Methods>
+    <contentCourse6Notes>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse6Notes</name>
+      <hint/>
+      <name>contentCourse6Notes</name>
       <number>54</number>
       <picker>0</picker>
-      <prettyName>ContentCourse6Notes</prettyName>
+      <prettyName>Content course 6 notes</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse6Notes>
-    <ContentCourse7>
+    </contentCourse6Notes>
+    <contentCourse7>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse7</name>
+      <hint/>
+      <name>contentCourse7</name>
       <number>55</number>
       <picker>0</picker>
-      <prettyName>ContentCourse7</prettyName>
+      <prettyName>Content course 7</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse7>
-    <ContentCourse7Methods>
+    </contentCourse7>
+    <contentCourse7Methods>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse7Methods</name>
+      <hint/>
+      <name>contentCourse7Methods</name>
       <number>56</number>
       <picker>0</picker>
-      <prettyName>ContentCourse7Methods</prettyName>
+      <prettyName>Content course 7 methods</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse7Methods>
-    <ContentCourse7Notes>
+    </contentCourse7Methods>
+    <contentCourse7Notes>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse7Notes</name>
+      <hint/>
+      <name>contentCourse7Notes</name>
       <number>57</number>
       <picker>0</picker>
-      <prettyName>ContentCourse7Notes</prettyName>
+      <prettyName>Content course 7 notes</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse7Notes>
-    <ContentCourse8>
+    </contentCourse7Notes>
+    <contentCourse8>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse8</name>
+      <hint/>
+      <name>contentCourse8</name>
       <number>58</number>
       <picker>0</picker>
-      <prettyName>ContentCourse8</prettyName>
+      <prettyName>Content course 8</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse8>
-    <ContentCourse8Methods>
+    </contentCourse8>
+    <contentCourse8Methods>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse8Methods</name>
+      <hint/>
+      <name>contentCourse8Methods</name>
       <number>59</number>
       <picker>0</picker>
-      <prettyName>ContentCourse8Methods</prettyName>
+      <prettyName>Content course 8 methods</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse8Methods>
-    <ContentCourse8Notes>
+    </contentCourse8Methods>
+    <contentCourse8Notes>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse8Notes</name>
+      <hint/>
+      <name>contentCourse8Notes</name>
       <number>60</number>
       <picker>0</picker>
-      <prettyName>ContentCourse8Notes</prettyName>
+      <prettyName>Content course 8 notes</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse8Notes>
-    <ContentCourse9>
+    </contentCourse8Notes>
+    <contentCourse9>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse9</name>
+      <hint/>
+      <name>contentCourse9</name>
       <number>61</number>
       <picker>0</picker>
-      <prettyName>ContentCourse9</prettyName>
+      <prettyName>Content course 9</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse9>
-    <ContentCourse9Methods>
+    </contentCourse9>
+    <contentCourse9Methods>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse9Methods</name>
+      <hint/>
+      <name>contentCourse9Methods</name>
       <number>62</number>
       <picker>0</picker>
-      <prettyName>ContentCourse9Methods</prettyName>
+      <prettyName>Content course 9 methods</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse9Methods>
-    <ContentCourse9Notes>
+    </contentCourse9Methods>
+    <contentCourse9Notes>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourse9Notes</name>
+      <hint/>
+      <name>contentCourse9Notes</name>
       <number>63</number>
       <picker>0</picker>
-      <prettyName>ContentCourse9Notes</prettyName>
+      <prettyName>Content course 9 notes</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourse9Notes>
-    <ContentCourseBibliography>
+    </contentCourse9Notes>
+    <contentCourseBibliography>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentCourseBibliography</name>
+      <hint/>
+      <name>contentCourseBibliography</name>
       <number>79</number>
       <picker>0</picker>
-      <prettyName>ContentCourseBibliography</prettyName>
+      <prettyName>Content course bibliography</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentCourseBibliography>
-    <ContentLab1>
+    </contentCourseBibliography>
+    <contentLab1>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab1</name>
+      <hint/>
+      <name>contentLab1</name>
       <number>80</number>
       <picker>0</picker>
-      <prettyName>ContentLab1</prettyName>
+      <prettyName>Content lab 1</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab1>
-    <ContentLab10>
+    </contentLab1>
+    <contentLab10>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab10</name>
+      <hint/>
+      <name>contentLab10</name>
       <number>107</number>
       <picker>0</picker>
-      <prettyName>ContentLab10</prettyName>
+      <prettyName>Content lab 10</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab10>
-    <ContentLab10Methods>
+    </contentLab10>
+    <contentLab10Methods>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab10Methods</name>
+      <hint/>
+      <name>contentLab10Methods</name>
       <number>108</number>
       <picker>0</picker>
-      <prettyName>ContentLab10Methods</prettyName>
+      <prettyName>Content lab 10 methods</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab10Methods>
-    <ContentLab10Notes>
+    </contentLab10Methods>
+    <contentLab10Notes>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab10Notes</name>
+      <hint/>
+      <name>contentLab10Notes</name>
       <number>109</number>
       <picker>0</picker>
-      <prettyName>ContentLab10Notes</prettyName>
+      <prettyName>Content lab 10 notes</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab10Notes>
-    <ContentLab11>
+    </contentLab10Notes>
+    <contentLab11>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab11</name>
+      <hint/>
+      <name>contentLab11</name>
       <number>110</number>
       <picker>0</picker>
-      <prettyName>ContentLab11</prettyName>
+      <prettyName>Content lab 11</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab11>
-    <ContentLab11Methods>
+    </contentLab11>
+    <contentLab11Methods>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab11Methods</name>
+      <hint/>
+      <name>contentLab11Methods</name>
       <number>111</number>
       <picker>0</picker>
-      <prettyName>ContentLab11Methods</prettyName>
+      <prettyName>Content lab 11 methods</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab11Methods>
-    <ContentLab11Notes>
+    </contentLab11Methods>
+    <contentLab11Notes>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab11Notes</name>
+      <hint/>
+      <name>contentLab11Notes</name>
       <number>112</number>
       <picker>0</picker>
-      <prettyName>ContentLab11Notes</prettyName>
+      <prettyName>Content lab 11 notes</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab11Notes>
-    <ContentLab12>
+    </contentLab11Notes>
+    <contentLab12>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab12</name>
+      <hint/>
+      <name>contentLab12</name>
       <number>113</number>
       <picker>0</picker>
-      <prettyName>ContentLab12</prettyName>
+      <prettyName>Content lab 12</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab12>
-    <ContentLab12Methods>
+    </contentLab12>
+    <contentLab12Methods>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab12Methods</name>
+      <hint/>
+      <name>contentLab12Methods</name>
       <number>114</number>
       <picker>0</picker>
-      <prettyName>ContentLab12Methods</prettyName>
+      <prettyName>Content lab 12 methods</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab12Methods>
-    <ContentLab12Notes>
+    </contentLab12Methods>
+    <contentLab12Notes>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab12Notes</name>
+      <hint/>
+      <name>contentLab12Notes</name>
       <number>115</number>
       <picker>0</picker>
-      <prettyName>ContentLab12Notes</prettyName>
+      <prettyName>Content lab 12 notes</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab12Notes>
-    <ContentLab13>
+    </contentLab12Notes>
+    <contentLab13>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab13</name>
+      <hint/>
+      <name>contentLab13</name>
       <number>116</number>
       <picker>0</picker>
-      <prettyName>ContentLab13</prettyName>
+      <prettyName>Content lab 13</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab13>
-    <ContentLab13Methods>
+    </contentLab13>
+    <contentLab13Methods>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab13Methods</name>
+      <hint/>
+      <name>contentLab13Methods</name>
       <number>117</number>
       <picker>0</picker>
-      <prettyName>ContentLab13Methods</prettyName>
+      <prettyName>Content lab 13 methods</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab13Methods>
-    <ContentLab13Notes>
+    </contentLab13Methods>
+    <contentLab13Notes>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab13Notes</name>
+      <hint/>
+      <name>contentLab13Notes</name>
       <number>118</number>
       <picker>0</picker>
-      <prettyName>ContentLab13Notes</prettyName>
+      <prettyName>Content lab 13 notes</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab13Notes>
-    <ContentLab14>
+    </contentLab13Notes>
+    <contentLab14>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab14</name>
+      <hint/>
+      <name>contentLab14</name>
       <number>119</number>
       <picker>0</picker>
-      <prettyName>ContentLab14</prettyName>
+      <prettyName>Content lab 14</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab14>
-    <ContentLab14Methods>
+    </contentLab14>
+    <contentLab14Methods>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab14Methods</name>
+      <hint/>
+      <name>contentLab14Methods</name>
       <number>120</number>
       <picker>0</picker>
-      <prettyName>ContentLab14Methods</prettyName>
+      <prettyName>Content lab 14 methods</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab14Methods>
-    <ContentLab14Notes>
+    </contentLab14Methods>
+    <contentLab14Notes>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab14Notes</name>
+      <hint/>
+      <name>contentLab14Notes</name>
       <number>121</number>
       <picker>0</picker>
-      <prettyName>ContentLab14Notes</prettyName>
+      <prettyName>Content lab 14 notes</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab14Notes>
-    <ContentLab1Methods>
+    </contentLab14Notes>
+    <contentLab1Methods>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab1Methods</name>
+      <hint/>
+      <name>contentLab1Methods</name>
       <number>81</number>
       <picker>0</picker>
-      <prettyName>ContentLab1Methods</prettyName>
+      <prettyName>Content lab 1 methods</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab1Methods>
-    <ContentLab1Notes>
+    </contentLab1Methods>
+    <contentLab1Notes>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab1Notes</name>
+      <hint/>
+      <name>contentLab1Notes</name>
       <number>82</number>
       <picker>0</picker>
-      <prettyName>ContentLab1Notes</prettyName>
+      <prettyName>Content lab 1 notes</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab1Notes>
-    <ContentLab2>
+    </contentLab1Notes>
+    <contentLab2>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab2</name>
+      <hint/>
+      <name>contentLab2</name>
       <number>83</number>
       <picker>0</picker>
-      <prettyName>ContentLab2</prettyName>
+      <prettyName>Content lab 2</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab2>
-    <ContentLab2Methods>
+    </contentLab2>
+    <contentLab2Methods>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab2Methods</name>
+      <hint/>
+      <name>contentLab2Methods</name>
       <number>84</number>
       <picker>0</picker>
-      <prettyName>ContentLab2Methods</prettyName>
+      <prettyName>Content lab 2 methods</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab2Methods>
-    <ContentLab2Notes>
+    </contentLab2Methods>
+    <contentLab2Notes>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab2Notes</name>
+      <hint/>
+      <name>contentLab2Notes</name>
       <number>85</number>
       <picker>0</picker>
-      <prettyName>ContentLab2Notes</prettyName>
+      <prettyName>Content lab 2 notes</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab2Notes>
-    <ContentLab3>
+    </contentLab2Notes>
+    <contentLab3>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab3</name>
+      <hint/>
+      <name>contentLab3</name>
       <number>86</number>
       <picker>0</picker>
-      <prettyName>ContentLab3</prettyName>
+      <prettyName>Content lab 3</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab3>
-    <ContentLab3Methods>
+    </contentLab3>
+    <contentLab3Methods>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab3Methods</name>
+      <hint/>
+      <name>contentLab3Methods</name>
       <number>87</number>
       <picker>0</picker>
-      <prettyName>ContentLab3Methods</prettyName>
+      <prettyName>Content lab 3 methods</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab3Methods>
-    <ContentLab3Notes>
+    </contentLab3Methods>
+    <contentLab3Notes>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab3Notes</name>
+      <hint/>
+      <name>contentLab3Notes</name>
       <number>88</number>
       <picker>0</picker>
-      <prettyName>ContentLab3Notes</prettyName>
+      <prettyName>Content lab 3 notes</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab3Notes>
-    <ContentLab4>
+    </contentLab3Notes>
+    <contentLab4>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab4</name>
+      <hint/>
+      <name>contentLab4</name>
       <number>89</number>
       <picker>0</picker>
-      <prettyName>ContentLab4</prettyName>
+      <prettyName>Content lab 4</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab4>
-    <ContentLab4Methods>
+    </contentLab4>
+    <contentLab4Methods>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab4Methods</name>
+      <hint/>
+      <name>contentLab4Methods</name>
       <number>90</number>
       <picker>0</picker>
-      <prettyName>ContentLab4Methods</prettyName>
+      <prettyName>Content lab 4 methods</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab4Methods>
-    <ContentLab4Notes>
+    </contentLab4Methods>
+    <contentLab4Notes>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab4Notes</name>
+      <hint/>
+      <name>contentLab4Notes</name>
       <number>91</number>
       <picker>0</picker>
-      <prettyName>ContentLab4Notes</prettyName>
+      <prettyName>Content lab 4 notes</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab4Notes>
-    <ContentLab5>
+    </contentLab4Notes>
+    <contentLab5>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab5</name>
+      <hint/>
+      <name>contentLab5</name>
       <number>92</number>
       <picker>0</picker>
-      <prettyName>ContentLab5</prettyName>
+      <prettyName>Content lab 5</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab5>
-    <ContentLab5Methods>
+    </contentLab5>
+    <contentLab5Methods>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab5Methods</name>
+      <hint/>
+      <name>contentLab5Methods</name>
       <number>93</number>
       <picker>0</picker>
-      <prettyName>ContentLab5Methods</prettyName>
+      <prettyName>Content lab 5 methods</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab5Methods>
-    <ContentLab5Notes>
+    </contentLab5Methods>
+    <contentLab5Notes>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab5Notes</name>
+      <hint/>
+      <name>contentLab5Notes</name>
       <number>94</number>
       <picker>0</picker>
-      <prettyName>ContentLab5Notes</prettyName>
+      <prettyName>Content lab 5 notes</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab5Notes>
-    <ContentLab6>
+    </contentLab5Notes>
+    <contentLab6>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab6</name>
+      <hint/>
+      <name>contentLab6</name>
       <number>95</number>
       <picker>0</picker>
-      <prettyName>ContentLab6</prettyName>
+      <prettyName>Content lab 6</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab6>
-    <ContentLab6Methods>
+    </contentLab6>
+    <contentLab6Methods>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab6Methods</name>
+      <hint/>
+      <name>contentLab6Methods</name>
       <number>96</number>
       <picker>0</picker>
-      <prettyName>ContentLab6Methods</prettyName>
+      <prettyName>Content lab 6 methods</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab6Methods>
-    <ContentLab6Notes>
+    </contentLab6Methods>
+    <contentLab6Notes>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab6Notes</name>
+      <hint/>
+      <name>contentLab6Notes</name>
       <number>97</number>
       <picker>0</picker>
-      <prettyName>ContentLab6Notes</prettyName>
+      <prettyName>Content lab 6 notes</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab6Notes>
-    <ContentLab7>
+    </contentLab6Notes>
+    <contentLab7>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab7</name>
+      <hint/>
+      <name>contentLab7</name>
       <number>98</number>
       <picker>0</picker>
-      <prettyName>ContentLab7</prettyName>
+      <prettyName>Content lab 7</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab7>
-    <ContentLab7Methods>
+    </contentLab7>
+    <contentLab7Methods>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab7Methods</name>
+      <hint/>
+      <name>contentLab7Methods</name>
       <number>99</number>
       <picker>0</picker>
-      <prettyName>ContentLab7Methods</prettyName>
+      <prettyName>Content lab 7 methods</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab7Methods>
-    <ContentLab7Notes>
+    </contentLab7Methods>
+    <contentLab7Notes>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab7Notes</name>
+      <hint/>
+      <name>contentLab7Notes</name>
       <number>100</number>
       <picker>0</picker>
-      <prettyName>ContentLab7Notes</prettyName>
+      <prettyName>Content lab 7 notes</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab7Notes>
-    <ContentLab8>
+    </contentLab7Notes>
+    <contentLab8>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab8</name>
+      <hint/>
+      <name>contentLab8</name>
       <number>101</number>
       <picker>0</picker>
-      <prettyName>ContentLab8</prettyName>
+      <prettyName>Content lab 8</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab8>
-    <ContentLab8Methods>
+    </contentLab8>
+    <contentLab8Methods>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab8Methods</name>
+      <hint/>
+      <name>contentLab8Methods</name>
       <number>102</number>
       <picker>0</picker>
-      <prettyName>ContentLab8Methods</prettyName>
+      <prettyName>Content lab 8 methods</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab8Methods>
-    <ContentLab8Notes>
+    </contentLab8Methods>
+    <contentLab8Notes>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab8Notes</name>
+      <hint/>
+      <name>contentLab8Notes</name>
       <number>103</number>
       <picker>0</picker>
-      <prettyName>ContentLab8Notes</prettyName>
+      <prettyName>Content lab 8 notes</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab8Notes>
-    <ContentLab9>
+    </contentLab8Notes>
+    <contentLab9>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab9</name>
+      <hint/>
+      <name>contentLab9</name>
       <number>104</number>
       <picker>0</picker>
-      <prettyName>ContentLab9</prettyName>
+      <prettyName>Content lab 9</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab9>
-    <ContentLab9Methods>
+    </contentLab9>
+    <contentLab9Methods>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab9Methods</name>
+      <hint/>
+      <name>contentLab9Methods</name>
       <number>105</number>
       <picker>0</picker>
-      <prettyName>ContentLab9Methods</prettyName>
+      <prettyName>Content lab 9 methods</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab9Methods>
-    <ContentLab9Notes>
+    </contentLab9Methods>
+    <contentLab9Notes>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLab9Notes</name>
+      <hint/>
+      <name>contentLab9Notes</name>
       <number>106</number>
       <picker>0</picker>
-      <prettyName>ContentLab9Notes</prettyName>
+      <prettyName>Content lab 9 notes</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLab9Notes>
-    <ContentLabBibliography>
+    </contentLab9Notes>
+    <contentLabBibliography>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ContentLabBibliography</name>
+      <hint/>
+      <name>contentLabBibliography</name>
       <number>122</number>
       <picker>0</picker>
-      <prettyName>ContentLabBibliography</prettyName>
+      <prettyName>Content lab bibliography</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ContentLabBibliography>
-    <CourseCoordinator>
+    </contentLabBibliography>
+    <courseCoordinator>
       <cache>0</cache>
       <customDisplay/>
+      <defaultValue/>
       <disabled>0</disabled>
       <displayType>input</displayType>
+      <freeText/>
+      <hint/>
+      <largeStorage>0</largeStorage>
       <multiSelect>1</multiSelect>
-      <name>CourseCoordinator</name>
+      <name>courseCoordinator</name>
       <number>8</number>
       <picker>1</picker>
-      <prettyName>CourseCoordinator</prettyName>
+      <prettyName>Course coordinator</prettyName>
       <relationalStorage>0</relationalStorage>
       <separator> </separator>
       <separators/>
@@ -1392,114 +1586,128 @@
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.UsersClass</classType>
-    </CourseCoordinator>
-    <CourseEvaluationCriteria>
+    </courseCoordinator>
+    <courseEvaluationCriteria>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>CourseEvaluationCriteria</name>
+      <hint/>
+      <name>courseEvaluationCriteria</name>
       <number>124</number>
       <picker>0</picker>
-      <prettyName>CourseEvaluationCriteria</prettyName>
+      <prettyName>Course evaluation criteria</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </CourseEvaluationCriteria>
-    <CourseEvaluationMethods>
+    </courseEvaluationCriteria>
+    <courseEvaluationMethods>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>CourseEvaluationMethods</name>
+      <hint/>
+      <name>courseEvaluationMethods</name>
       <number>125</number>
       <picker>0</picker>
-      <prettyName>CourseEvaluationMethods</prettyName>
+      <prettyName>Course evaluation methods</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </CourseEvaluationMethods>
-    <CourseEvaluationPercentage>
+    </courseEvaluationMethods>
+    <courseEvaluationPercentage>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>CourseEvaluationPercentage</name>
+      <hint/>
+      <name>courseEvaluationPercentage</name>
       <number>126</number>
       <picker>0</picker>
-      <prettyName>CourseEvaluationPercentage</prettyName>
+      <prettyName>Course evaluation percentage</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </CourseEvaluationPercentage>
-    <CourseHoursPerWeek>
+    </courseEvaluationPercentage>
+    <courseHoursPerWeek>
       <customDisplay/>
       <disabled>0</disabled>
-      <name>CourseHoursPerWeek</name>
+      <hint/>
+      <name>courseHoursPerWeek</name>
       <number>15</number>
       <numberType>long</numberType>
-      <prettyName>CourseHoursPerWeek</prettyName>
+      <prettyName>Course hours per week</prettyName>
       <size>30</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
-    </CourseHoursPerWeek>
-    <CourseHoursTotal>
+    </courseHoursPerWeek>
+    <courseHoursTotal>
       <customDisplay/>
       <disabled>0</disabled>
-      <name>CourseHoursTotal</name>
+      <hint/>
+      <name>courseHoursTotal</name>
       <number>18</number>
       <numberType>long</numberType>
-      <prettyName>CourseHoursTotal</prettyName>
+      <prettyName>Course hours total</prettyName>
       <size>30</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
-    </CourseHoursTotal>
-    <CourseName>
+    </courseHoursTotal>
+    <courseName>
       <customDisplay/>
       <disabled>0</disabled>
-      <name>CourseName</name>
+      <hint/>
+      <name>courseName</name>
       <number>7</number>
       <picker>0</picker>
-      <prettyName>CourseName</prettyName>
+      <prettyName>Course name</prettyName>
       <size>30</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
-    </CourseName>
-    <CourseStudyHours>
+    </courseName>
+    <courseStudyHours>
       <customDisplay/>
       <disabled>0</disabled>
-      <name>CourseStudyHours</name>
+      <hint/>
+      <name>courseStudyHours</name>
       <number>20</number>
       <numberType>long</numberType>
-      <prettyName>CourseStudyHours</prettyName>
+      <prettyName>Course study hours</prettyName>
       <size>30</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
-    </CourseStudyHours>
-    <CourseType>
+    </courseStudyHours>
+    <courseType>
       <cache>0</cache>
       <customDisplay/>
+      <defaultValue/>
       <disabled>0</disabled>
       <displayType>select</displayType>
+      <freeText/>
+      <hint/>
+      <largeStorage>0</largeStorage>
       <multiSelect>0</multiSelect>
-      <name>CourseType</name>
+      <name>courseType</name>
       <number>13</number>
       <picker>0</picker>
-      <prettyName>CourseType</prettyName>
+      <prettyName>Course type</prettyName>
       <relationalStorage>0</relationalStorage>
       <separator> </separator>
       <separators> ,|</separators>
@@ -1510,11 +1718,12 @@
       <validationRegExp/>
       <values>OB=OB-Compulsory|OP=OP-Optional</values>
       <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
-    </CourseType>
-    <Credits>
+    </courseType>
+    <credits>
       <customDisplay/>
       <disabled>0</disabled>
-      <name>Credits</name>
+      <hint/>
+      <name>credits</name>
       <number>28</number>
       <numberType>long</numberType>
       <prettyName>Credits</prettyName>
@@ -1523,11 +1732,12 @@
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
-    </Credits>
-    <Department>
+    </credits>
+    <department>
       <customDisplay/>
       <disabled>0</disabled>
-      <name>Department</name>
+      <hint/>
+      <name>department</name>
       <number>3</number>
       <picker>0</picker>
       <prettyName>Department</prettyName>
@@ -1536,17 +1746,21 @@
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
-    </Department>
-    <EvaluationType>
+    </department>
+    <evaluationType>
       <cache>0</cache>
       <customDisplay/>
+      <defaultValue/>
       <disabled>0</disabled>
       <displayType>select</displayType>
+      <freeText/>
+      <hint/>
+      <largeStorage>0</largeStorage>
       <multiSelect>0</multiSelect>
-      <name>EvaluationType</name>
+      <name>evaluationType</name>
       <number>12</number>
       <picker>0</picker>
-      <prettyName>EvaluationType</prettyName>
+      <prettyName>Evaluation type</prettyName>
       <relationalStorage>0</relationalStorage>
       <separator> </separator>
       <separators> ,|</separators>
@@ -1557,24 +1771,26 @@
       <validationRegExp/>
       <values>Mixed=Mixed|Exam=Exam|Practical=Practical</values>
       <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
-    </EvaluationType>
-    <ExaminationHours>
+    </evaluationType>
+    <examinationHours>
       <customDisplay/>
       <disabled>0</disabled>
-      <name>ExaminationHours</name>
+      <hint/>
+      <name>examinationHours</name>
       <number>24</number>
       <numberType>long</numberType>
-      <prettyName>ExaminationHours</prettyName>
+      <prettyName>Examination hours</prettyName>
       <size>30</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
-    </ExaminationHours>
-    <Faculty>
+    </examinationHours>
+    <faculty>
       <customDisplay/>
       <disabled>0</disabled>
-      <name>Faculty</name>
+      <hint/>
+      <name>faculty</name>
       <number>2</number>
       <picker>0</picker>
       <prettyName>Faculty</prettyName>
@@ -1583,168 +1799,201 @@
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
-    </Faculty>
-    <FieldofStudy>
+    </faculty>
+    <fieldOfStudy>
       <customDisplay/>
       <disabled>0</disabled>
-      <name>FieldofStudy</name>
+      <hint/>
+      <name>fieldOfStudy</name>
       <number>4</number>
       <picker>0</picker>
-      <prettyName>FieldofStudy</prettyName>
+      <prettyName>Field of study</prettyName>
       <size>30</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
-    </FieldofStudy>
-    <HomeworkHours>
+    </fieldOfStudy>
+    <higherLearningInstitution>
       <customDisplay/>
       <disabled>0</disabled>
-      <name>HomeworkHours</name>
+      <hint/>
+      <name>higherLearningInstitution</name>
+      <number>1</number>
+      <picker>0</picker>
+      <prettyName>Higher learning institution</prettyName>
+      <size>30</size>
+      <unmodifiable>0</unmodifiable>
+      <validationMessage/>
+      <validationRegExp/>
+      <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+    </higherLearningInstitution>
+    <homeworkHours>
+      <customDisplay/>
+      <disabled>0</disabled>
+      <hint/>
+      <name>homeworkHours</name>
       <number>22</number>
       <numberType>long</numberType>
-      <prettyName>HomeworkHours</prettyName>
+      <prettyName>Homework hours</prettyName>
       <size>30</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
-    </HomeworkHours>
-    <HoursPerWeek>
+    </homeworkHours>
+    <hoursPerWeek>
       <customDisplay/>
       <disabled>0</disabled>
-      <name>HoursPerWeek</name>
+      <hint/>
+      <name>hoursPerWeek</name>
       <number>14</number>
       <numberType>long</numberType>
-      <prettyName>HoursPerWeek</prettyName>
+      <prettyName>Hours per week</prettyName>
       <size>30</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
-    </HoursPerWeek>
-    <HoursTotal>
+    </hoursPerWeek>
+    <hoursTotal>
       <customDisplay/>
       <disabled>0</disabled>
-      <name>HoursTotal</name>
+      <hint/>
+      <name>hoursTotal</name>
       <number>17</number>
       <numberType>long</numberType>
-      <prettyName>HoursTotal</prettyName>
+      <prettyName>Hours total</prettyName>
       <size>30</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
-    </HoursTotal>
-    <IndividualTotalHours>
+    </hoursTotal>
+    <individualTotalHours>
       <customDisplay/>
       <disabled>0</disabled>
-      <name>IndividualTotalHours</name>
+      <hint/>
+      <name>individualTotalHours</name>
       <number>26</number>
       <numberType>long</numberType>
-      <prettyName>IndividualTotalHours</prettyName>
+      <prettyName>Individual total hours</prettyName>
       <size>30</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
-    </IndividualTotalHours>
-    <IndustryConnection>
+    </individualTotalHours>
+    <industryConnection>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>IndustryConnection</name>
+      <hint/>
+      <name>industryConnection</name>
       <number>123</number>
       <picker>0</picker>
-      <prettyName>IndustryConnection</prettyName>
+      <prettyName>Industry connection</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </IndustryConnection>
-    <LabEvaluationCriteria>
+    </industryConnection>
+    <labEvaluationCriteria>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>LabEvaluationCriteria</name>
+      <hint/>
+      <name>labEvaluationCriteria</name>
       <number>127</number>
       <picker>0</picker>
-      <prettyName>LabEvaluationCriteria</prettyName>
+      <prettyName>Lab evaluation criteria</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </LabEvaluationCriteria>
-    <LabEvaluationMethods>
+    </labEvaluationCriteria>
+    <labEvaluationMethods>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>LabEvaluationMethods</name>
+      <hint/>
+      <name>labEvaluationMethods</name>
       <number>128</number>
       <picker>0</picker>
-      <prettyName>LabEvaluationMethods</prettyName>
+      <prettyName>Lab evaluation methods</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </LabEvaluationMethods>
-    <LabEvaluationPercentage>
+    </labEvaluationMethods>
+    <labEvaluationPercentage>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>LabEvaluationPercentage</name>
+      <hint/>
+      <name>labEvaluationPercentage</name>
       <number>129</number>
       <picker>0</picker>
-      <prettyName>LabEvaluationPercentage</prettyName>
+      <prettyName>Lab evaluation percentage</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </LabEvaluationPercentage>
-    <LabHoursPerWeek>
+    </labEvaluationPercentage>
+    <labHoursPerWeek>
       <customDisplay/>
       <disabled>0</disabled>
-      <name>LabHoursPerWeek</name>
+      <hint/>
+      <name>labHoursPerWeek</name>
       <number>16</number>
       <numberType>long</numberType>
-      <prettyName>LabHoursPerWeek</prettyName>
+      <prettyName>Lab hours per week</prettyName>
       <size>30</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
-    </LabHoursPerWeek>
-    <LabHoursTotal>
+    </labHoursPerWeek>
+    <labHoursTotal>
       <customDisplay/>
       <disabled>0</disabled>
-      <name>LabHoursTotal</name>
+      <hint/>
+      <name>labHoursTotal</name>
       <number>19</number>
       <numberType>long</numberType>
-      <prettyName>LabHoursTotal</prettyName>
+      <prettyName>Lab hours total</prettyName>
       <size>30</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
-    </LabHoursTotal>
-    <LaboratoryCoordinators>
+    </labHoursTotal>
+    <laboratoryCoordinators>
       <cache>0</cache>
       <customDisplay/>
+      <defaultValue/>
       <disabled>0</disabled>
       <displayType>input</displayType>
+      <freeText/>
+      <hint/>
+      <largeStorage>0</largeStorage>
       <multiSelect>1</multiSelect>
-      <name>LaboratoryCoordinators</name>
+      <name>laboratoryCoordinators</name>
       <number>9</number>
       <picker>1</picker>
-      <prettyName>LaboratoryCoordinators</prettyName>
+      <prettyName>Laboratory coordinators</prettyName>
       <relationalStorage>0</relationalStorage>
       <separator> </separator>
       <separators/>
@@ -1755,145 +2004,165 @@
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.UsersClass</classType>
-    </LaboratoryCoordinators>
-    <LibraryStudyHours>
+    </laboratoryCoordinators>
+    <libraryStudyHours>
       <customDisplay/>
       <disabled>0</disabled>
-      <name>LibraryStudyHours</name>
+      <hint/>
+      <name>libraryStudyHours</name>
       <number>21</number>
       <numberType>long</numberType>
-      <prettyName>LibraryStudyHours</prettyName>
+      <prettyName>Library study hours</prettyName>
       <size>30</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
-    </LibraryStudyHours>
-    <MaterielRequirementsCourse>
+    </libraryStudyHours>
+    <materielRequirementsCourse>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>MaterielRequirementsCourse</name>
+      <hint/>
+      <name>materielRequirementsCourse</name>
       <number>31</number>
       <picker>0</picker>
-      <prettyName>MaterielRequirementsCourse</prettyName>
+      <prettyName>Materiel requirements course</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </MaterielRequirementsCourse>
-    <MaterielRequirementsLab>
+    </materielRequirementsCourse>
+    <materielRequirementsLab>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>MaterielRequirementsLab</name>
+      <hint/>
+      <name>materielRequirementsLab</name>
       <number>32</number>
       <picker>0</picker>
-      <prettyName>MaterielRequirementsLab</prettyName>
+      <prettyName>Materiel requirements lab</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </MaterielRequirementsLab>
-    <MinimumPerformanceStandards>
+    </materielRequirementsLab>
+    <minimumPerformanceStandards>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>MinimumPerformanceStandards</name>
+      <hint/>
+      <name>minimumPerformanceStandards</name>
       <number>130</number>
       <picker>0</picker>
-      <prettyName>MinimumPerformanceStandards</prettyName>
+      <prettyName>Minimum performance standards</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </MinimumPerformanceStandards>
-    <ObjectivesGeneral>
+    </minimumPerformanceStandards>
+    <objectivesGeneral>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ObjectivesGeneral</name>
+      <hint/>
+      <name>objectivesGeneral</name>
       <number>35</number>
       <picker>0</picker>
-      <prettyName>ObjectivesGeneral</prettyName>
+      <prettyName>Objectives general</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ObjectivesGeneral>
-    <ObjectivesSpecific>
+    </objectivesGeneral>
+    <objectivesSpecific>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>ObjectivesSpecific</name>
+      <hint/>
+      <name>objectivesSpecific</name>
       <number>36</number>
       <picker>0</picker>
-      <prettyName>ObjectivesSpecific</prettyName>
+      <prettyName>Objectives specific</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </ObjectivesSpecific>
-    <OtherActivitiesHours>
+    </objectivesSpecific>
+    <otherActivitiesHours>
       <customDisplay/>
       <disabled>0</disabled>
-      <name>OtherActivitiesHours</name>
+      <hint/>
+      <name>otherActivitiesHours</name>
       <number>25</number>
       <numberType>long</numberType>
-      <prettyName>OtherActivitiesHours</prettyName>
+      <prettyName>Other activities hours</prettyName>
       <size>30</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
-    </OtherActivitiesHours>
-    <PreconditionsCompetence>
+    </otherActivitiesHours>
+    <preconditionsCompetence>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>PreconditionsCompetence</name>
+      <hint/>
+      <name>preconditionsCompetence</name>
       <number>30</number>
       <picker>0</picker>
-      <prettyName>PreconditionsCompetence</prettyName>
+      <prettyName>Preconditions competence</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </PreconditionsCompetence>
-    <PreconditionsCurriculum>
+    </preconditionsCompetence>
+    <preconditionsCurriculum>
+      <contenttype>---</contenttype>
       <customDisplay/>
       <disabled>0</disabled>
       <editor>---</editor>
-      <name>PreconditionsCurriculum</name>
+      <hint/>
+      <name>preconditionsCurriculum</name>
       <number>29</number>
       <picker>0</picker>
-      <prettyName>PreconditionsCurriculum</prettyName>
+      <prettyName>Preconditions curriculum</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-    </PreconditionsCurriculum>
-    <Semester>
+    </preconditionsCurriculum>
+    <semester>
       <cache>0</cache>
       <customDisplay/>
+      <defaultValue/>
       <disabled>0</disabled>
       <displayType>select</displayType>
+      <freeText/>
+      <hint/>
+      <largeStorage>0</largeStorage>
       <multiSelect>0</multiSelect>
-      <name>Semester</name>
+      <name>semester</name>
       <number>11</number>
       <picker>0</picker>
       <prettyName>Semester</prettyName>
@@ -1907,56 +2176,63 @@
       <validationRegExp/>
       <values>I=I|II=II</values>
       <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
-    </Semester>
-    <StudyProgram>
+    </semester>
+    <studyProgram>
       <customDisplay/>
       <disabled>0</disabled>
-      <name>StudyProgram</name>
+      <hint/>
+      <name>studyProgram</name>
       <number>6</number>
       <picker>0</picker>
-      <prettyName>StudyProgram</prettyName>
+      <prettyName>Study program</prettyName>
       <size>30</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
-    </StudyProgram>
-    <TotalHoursSemester>
+    </studyProgram>
+    <totalHoursSemester>
       <customDisplay/>
       <disabled>0</disabled>
-      <name>TotalHoursSemester</name>
+      <hint/>
+      <name>totalHoursSemester</name>
       <number>27</number>
       <numberType>long</numberType>
-      <prettyName>TotalHoursSemester</prettyName>
+      <prettyName>Total hours semester</prettyName>
       <size>30</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
-    </TotalHoursSemester>
-    <TutorialsHours>
+    </totalHoursSemester>
+    <tutorialsHours>
       <customDisplay/>
       <disabled>0</disabled>
-      <name>TutorialsHours</name>
+      <hint/>
+      <name>tutorialsHours</name>
       <number>23</number>
       <numberType>long</numberType>
-      <prettyName>TutorialsHours</prettyName>
+      <prettyName>Tutorials hours</prettyName>
       <size>30</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
-    </TutorialsHours>
-    <TypeofDegree>
+    </tutorialsHours>
+    <typeOfDegree>
       <cache>0</cache>
       <customDisplay/>
+      <defaultValue/>
       <disabled>0</disabled>
       <displayType>select</displayType>
+      <freeText/>
+      <hint/>
+      <largeStorage>0</largeStorage>
       <multiSelect>0</multiSelect>
-      <name>TypeofDegree</name>
+      <name>typeOfDegree</name>
       <number>5</number>
       <picker>0</picker>
-      <prettyName>TypeofDegree</prettyName>
+      <prettyName>Type of degree</prettyName>
       <relationalStorage>0</relationalStorage>
       <separator/>
       <separators> ,|</separators>
@@ -1967,17 +2243,21 @@
       <validationRegExp/>
       <values>Bachelor=Bachelor|Master=Master</values>
       <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
-    </TypeofDegree>
-    <YearofStudy>
+    </typeOfDegree>
+    <yearOfStudy>
       <cache>0</cache>
       <customDisplay/>
+      <defaultValue/>
       <disabled>0</disabled>
       <displayType>select</displayType>
+      <freeText/>
+      <hint/>
+      <largeStorage>0</largeStorage>
       <multiSelect>0</multiSelect>
-      <name>YearofStudy</name>
+      <name>yearOfStudy</name>
       <number>10</number>
       <picker>0</picker>
-      <prettyName>YearofStudy</prettyName>
+      <prettyName>Year of study</prettyName>
       <relationalStorage>0</relationalStorage>
       <separator> </separator>
       <separators> ,|</separators>
@@ -1988,29 +2268,7 @@
       <validationRegExp/>
       <values>1=1|2=2|3=3</values>
       <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
-    </YearofStudy>
-    <code>
-      <disabled>0</disabled>
-      <name>code</name>
-      <number>131</number>
-      <prettyName>code</prettyName>
-      <size>30</size>
-      <unmodifiable>0</unmodifiable>
-      <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
-    </code>
-    <higherLearningInstitution>
-      <customDisplay/>
-      <disabled>0</disabled>
-      <name>higherLearningInstitution</name>
-      <number>1</number>
-      <picker>0</picker>
-      <prettyName>higherLearningInstitution</prettyName>
-      <size>30</size>
-      <unmodifiable>0</unmodifiable>
-      <validationMessage/>
-      <validationRegExp/>
-      <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
-    </higherLearningInstitution>
+    </yearOfStudy>
   </class>
   <object>
     <name>Structure.Code.CourseClass</name>
