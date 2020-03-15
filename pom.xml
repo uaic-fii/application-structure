@@ -24,8 +24,8 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.xwiki.contrib</groupId>
-  	<artifactId>parent-platform</artifactId>
-	<version>11.3.6</version>
+    <artifactId>parent-platform</artifactId>
+    <version>12.1</version>
   </parent>
   <groupId>com.fii.structure</groupId>
   <artifactId>application-structure</artifactId>
@@ -33,10 +33,10 @@
   <packaging>pom</packaging>
   <name>Structure Application - Parent POM</name>
   <developers>
-  	<developer>
+    <developer>
       <id>acotiuga</id>
       <name>Alex Cotiugă</name>
-	</developer>
+    </developer>
   </developers>
   <modules>
     <module>application-structure-ui</module>
