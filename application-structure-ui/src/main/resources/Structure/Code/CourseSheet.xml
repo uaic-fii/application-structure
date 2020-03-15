@@ -31,7 +31,7 @@
   <author>xwiki:XWiki.Admin</author>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
   <version>1.1</version>
-  <title>#if($doc.name == 'CourseSheet')Course Sheet#{else}$services.display.title($doc, {'displayerHint': 'default'})#end</title>
+  <title/>
   <comment/>
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
@@ -63,7 +63,7 @@
 (% class="grid" %)
 |(% colspan="6" %)**3. Total Estimated Time **(hours per semester and study activities)
 |**3.1** Number of hours per week|**$doc.display('HoursPerWeek')**|**3.2** Course hours|**$doc.display('CourseHoursPerWeek')**|**3.3** Laboratory hours|**$doc.display('LabHoursPerWeek')**
-|**3.4 **Total hours planned|#set ($totalTimePlanned = $util.parseInt($doc.display('CourseHoursTotal')) + $util.parseInt($doc.display('LabHoursTotal'))) **$totalTimePlanned**|**3.5** Course hours|**$doc.display('CourseHoursTotal')**|**3.6** Laboratory hours|**$doc.display('LabHoursTotal')**
+|**3.4 **Total hours planned|#set ($totalTimePlanned = $numbertool.toNumber($doc.display('CourseHoursTotal')) + $numbertool.toNumber($doc.display('LabHoursTotal'))) **$totalTimePlanned**|**3.5** Course hours|**$doc.display('CourseHoursTotal')**|**3.6** Laboratory hours|**$doc.display('LabHoursTotal')**
 |(% colspan="5" %)Time distribution|hours
 |(% colspan="5" %)Individual study using manuals, course notes, etc.|**$doc.display('CourseStudyHours')**
 |(% colspan="5" %)Individual study in the library, using specialized electronic tools, field work|**$doc.display('LibraryStudyHours')**
@@ -71,8 +71,8 @@
 |(% colspan="5" %)Tutorials |**$doc.display('TutorialsHours')**
 |(% colspan="5" %)Exams|**$doc.display('ExaminationHours')**
 |(% colspan="5" %)Other activities|**$doc.display('OtherActivitiesHours')**
-|(% colspan="5" %)**3.7 **Total hours of individual study [ST + DS + PS]| #set ($indStudy = $util.parseInt($doc.display('CourseStudyHours')) + $util.parseInt($doc.display('LibraryStudyHours')) + $util.parseInt($doc.display('HomeworkHours')) + $util.parseInt($doc.display('TutorialsHours'))) **$indStudy**
-|(% colspan="5" %)**3.8 **Total hour per semester [no. of credits x 30 = T + E + C +TI ]| #set ($totalTime = $totalTimePlanned + $util.parseInt($doc.display('ExaminationHours')) + $indStudy) **$totalTime**
+|(% colspan="5" %)**3.7 **Total hours of individual study [ST + DS + PS]| #set ($indStudy = $numbertool.toNumber($doc.display('CourseStudyHours')) + $numbertool.toNumber($doc.display('LibraryStudyHours')) + $numbertool.toNumber($doc.display('HomeworkHours')) + $numbertool.toNumber($doc.display('TutorialsHours'))) **$indStudy**
+|(% colspan="5" %)**3.8 **Total hour per semester [no. of credits x 30 = T + E + C +TI ]| #set ($totalTime = $totalTimePlanned + $numbertool.toNumber($doc.display('ExaminationHours')) + $indStudy) **$totalTime**
 |(% colspan="5" %)**3.9 **Number of credits|**$doc.display('Credits')**
 
 ~* //Obs. T = C + S//

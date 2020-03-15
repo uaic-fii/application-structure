@@ -31,14 +31,14 @@
   <author>xwiki:XWiki.Admin</author>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
   <version>1.1</version>
-  <title>#if($doc.name == 'CurriculumSheet')Curriculum Sheet#{else}$services.display.title($doc, {'displayerHint': 'default'})#end</title>
+  <title/>
   <comment/>
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
   <hidden>true</hidden>
   <content>{{velocity output="false"}}
 #macro (displayYear $yearOfStudy)
-  #set ($year = $doc.getValue('StartYear').intValue() + $mathtool.toInteger($yearOfStudy).intValue() - 1)
+  #set ($year = $doc.getValue('StartYear').intValue() + $numbertool.toNumber($yearOfStudy).intValue() - 1)
   (% class="doOddEven grid" id="tableid" %)
   (% class="sortHeader" %)|=(% rowspan="4" %)Nr.|=(% rowspan="4" %)**Code** |=(% colspan="7" rowspan="3" %)**Course Name**|=(% colspan="4" %)**Sem. I**|=(% colspan="4" %)**Sem. II**|=(% colspan="2" %)**Examination Method**
   |=C|=S|=L|=(% rowspan="2" %)Cr|=C|=S|=L|=(% rowspan="2" %)Cr|=(% rowspan="3" %)Sem. I|=(% rowspan="3" %)Sem. II
