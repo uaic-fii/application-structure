@@ -74,8 +74,8 @@
     #set ($originalXObject = $itemDoc.getObject($originalXClass))
     #if ("$!itemDoc.getObject($newXClass)" == '')
       #set ($newXobject = $itemDoc.newObject($newXClass))
-      #foreach ($property in $originalXObject.getProperties())
-        #set ($discard = $newXobject.set($property.name, $property.value))
+      #foreach ($property in $originalXObject.properties)
+        #set ($discard = $newXobject.set($stringtool.uncapitalize($property.name), $property.value))
       #end
       #set ($discard = $itemDoc.removeObject($originalXObject))
       #set ($discard = $itemDoc.setTitle($newXobject.getValue('CourseName')))
