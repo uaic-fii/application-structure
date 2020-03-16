@@ -75,7 +75,16 @@
     #if ("$!itemDoc.getObject($newXClass)" == '')
       #set ($newXobject = $itemDoc.newObject($newXClass))
       #foreach ($property in $originalXObject.properties)
-        #set ($discard = $newXobject.set($stringtool.uncapitalize($property.name), $property.value))
+        #set ($propertyName = $stringtool.uncapitalize($property.name))
+        #if ($property.name == 'FieldofStudy')
+          #set ($propertyName = 'fieldOfStudy')
+        #elseif ($property.name == 'TypeofDegree')
+          #set ($propertyName = 'typeOfDegree')
+        #elseif ($property.name == 'YearofStudy')
+          #set ($propertyName = 'CourseCoordinator')
+        #elseif ($property.name == 'courseCoordinators')
+        #end
+        #set ($discard = $newXobject.set($propertyName, $property.value))
       #end
       #set ($discard = $itemDoc.removeObject($originalXObject))
       #set ($discard = $itemDoc.setTitle($newXobject.getValue('CourseName')))
