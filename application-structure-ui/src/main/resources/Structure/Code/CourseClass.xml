@@ -75,7 +75,7 @@
       <name>competenciesProfessional</name>
       <number>33</number>
       <picker>0</picker>
-      <prettyName>Competencies professional</prettyName>
+      <prettyName>Professional Competencies</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
@@ -92,7 +92,7 @@
       <name>competenciesTransversal</name>
       <number>34</number>
       <picker>0</picker>
-      <prettyName>Competencies transversal</prettyName>
+      <prettyName>Transversal competencies</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
@@ -1562,7 +1562,7 @@
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
     </contentLabBibliography>
-    <courseCoordinator>
+    <courseCoordinators>
       <cache>0</cache>
       <customDisplay/>
       <defaultValue/>
@@ -1572,10 +1572,10 @@
       <hint/>
       <largeStorage>0</largeStorage>
       <multiSelect>1</multiSelect>
-      <name>courseCoordinator</name>
+      <name>courseCoordinators</name>
       <number>8</number>
       <picker>1</picker>
-      <prettyName>Course coordinator</prettyName>
+      <prettyName>Course coordinators</prettyName>
       <relationalStorage>0</relationalStorage>
       <separator> </separator>
       <separators/>
@@ -1586,7 +1586,7 @@
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.UsersClass</classType>
-    </courseCoordinator>
+    </courseCoordinators>
     <courseEvaluationCriteria>
       <contenttype>---</contenttype>
       <customDisplay/>
@@ -1596,7 +1596,7 @@
       <name>courseEvaluationCriteria</name>
       <number>124</number>
       <picker>0</picker>
-      <prettyName>Course evaluation criteria</prettyName>
+      <prettyName>Course</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
@@ -1645,7 +1645,7 @@
       <name>courseHoursPerWeek</name>
       <number>15</number>
       <numberType>long</numberType>
-      <prettyName>Course hours per week</prettyName>
+      <prettyName>Course hours</prettyName>
       <size>30</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
@@ -1659,7 +1659,7 @@
       <name>courseHoursTotal</name>
       <number>18</number>
       <numberType>long</numberType>
-      <prettyName>Course hours total</prettyName>
+      <prettyName>Course hours</prettyName>
       <size>30</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
@@ -1673,7 +1673,7 @@
       <name>courseName</name>
       <number>7</number>
       <picker>0</picker>
-      <prettyName>Course name</prettyName>
+      <prettyName>Title</prettyName>
       <size>30</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
@@ -1687,7 +1687,7 @@
       <name>courseStudyHours</name>
       <number>20</number>
       <numberType>long</numberType>
-      <prettyName>Course study hours</prettyName>
+      <prettyName>Individual study using manuals, course notes, etc.</prettyName>
       <size>30</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
@@ -1726,7 +1726,7 @@
       <name>credits</name>
       <number>28</number>
       <numberType>long</numberType>
-      <prettyName>Credits</prettyName>
+      <prettyName>Number of credits</prettyName>
       <size>30</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
@@ -1779,7 +1779,7 @@
       <name>examinationHours</name>
       <number>24</number>
       <numberType>long</numberType>
-      <prettyName>Examination hours</prettyName>
+      <prettyName>Exams</prettyName>
       <size>30</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
@@ -1835,7 +1835,7 @@
       <name>homeworkHours</name>
       <number>22</number>
       <numberType>long</numberType>
-      <prettyName>Homework hours</prettyName>
+      <prettyName>Preparation of seminaries/laboratories, homework, papers, portfolios, essays</prettyName>
       <size>30</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
@@ -1849,7 +1849,7 @@
       <name>hoursPerWeek</name>
       <number>14</number>
       <numberType>long</numberType>
-      <prettyName>Hours per week</prettyName>
+      <prettyName>Number of hours per week</prettyName>
       <size>30</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
@@ -1863,7 +1863,7 @@
       <name>hoursTotal</name>
       <number>17</number>
       <numberType>long</numberType>
-      <prettyName>Hours total</prettyName>
+      <prettyName>Total hours planned</prettyName>
       <size>30</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
@@ -1893,7 +1893,7 @@
       <name>industryConnection</name>
       <number>123</number>
       <picker>0</picker>
-      <prettyName>Industry connection</prettyName>
+      <prettyName>Adaptation of course content according to the expectations of the representatives of communities, professional associations and main employers from the field of the teaching</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
@@ -1910,7 +1910,7 @@
       <name>labEvaluationCriteria</name>
       <number>127</number>
       <picker>0</picker>
-      <prettyName>Lab evaluation criteria</prettyName>
+      <prettyName>Laboratory/Seminar</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
@@ -1959,7 +1959,7 @@
       <name>labHoursPerWeek</name>
       <number>16</number>
       <numberType>long</numberType>
-      <prettyName>Lab hours per week</prettyName>
+      <prettyName>Laboratory hours</prettyName>
       <size>30</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
@@ -1973,7 +1973,7 @@
       <name>labHoursTotal</name>
       <number>19</number>
       <numberType>long</numberType>
-      <prettyName>Lab hours total</prettyName>
+      <prettyName>Laboratory hours</prettyName>
       <size>30</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
@@ -2012,7 +2012,7 @@
       <name>libraryStudyHours</name>
       <number>21</number>
       <numberType>long</numberType>
-      <prettyName>Library study hours</prettyName>
+      <prettyName>Individual study in the library, using specialized electronic tools, field work</prettyName>
       <size>30</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
@@ -2028,7 +2028,7 @@
       <name>materielRequirementsCourse</name>
       <number>31</number>
       <picker>0</picker>
-      <prettyName>Materiel requirements course</prettyName>
+      <prettyName>For courses</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
@@ -2045,7 +2045,7 @@
       <name>materielRequirementsLab</name>
       <number>32</number>
       <picker>0</picker>
-      <prettyName>Materiel requirements lab</prettyName>
+      <prettyName>For laboratories</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
@@ -2079,7 +2079,7 @@
       <name>objectivesGeneral</name>
       <number>35</number>
       <picker>0</picker>
-      <prettyName>Objectives general</prettyName>
+      <prettyName>General objective</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
@@ -2096,7 +2096,7 @@
       <name>objectivesSpecific</name>
       <number>36</number>
       <picker>0</picker>
-      <prettyName>Objectives specific</prettyName>
+      <prettyName>Specific objectives</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
@@ -2111,7 +2111,7 @@
       <name>otherActivitiesHours</name>
       <number>25</number>
       <numberType>long</numberType>
-      <prettyName>Other activities hours</prettyName>
+      <prettyName>Other activities</prettyName>
       <size>30</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
@@ -2127,7 +2127,7 @@
       <name>preconditionsCompetence</name>
       <number>30</number>
       <picker>0</picker>
-      <prettyName>Preconditions competence</prettyName>
+      <prettyName>Competence preconditions</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
@@ -2144,7 +2144,7 @@
       <name>preconditionsCurriculum</name>
       <number>29</number>
       <picker>0</picker>
-      <prettyName>Preconditions curriculum</prettyName>
+      <prettyName>Curriculum preconditions</prettyName>
       <rows>5</rows>
       <size>40</size>
       <unmodifiable>0</unmodifiable>
@@ -2184,7 +2184,7 @@
       <name>studyProgram</name>
       <number>6</number>
       <picker>0</picker>
-      <prettyName>Study program</prettyName>
+      <prettyName>Study program/Qualification</prettyName>
       <size>30</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
@@ -2212,7 +2212,7 @@
       <name>tutorialsHours</name>
       <number>23</number>
       <numberType>long</numberType>
-      <prettyName>Tutorials hours</prettyName>
+      <prettyName>Tutorials</prettyName>
       <size>30</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>

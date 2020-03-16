@@ -36,7 +36,35 @@
   <minorEdit>false</minorEdit>
   <syntaxId>plain/1.0</syntaxId>
   <hidden>true</hidden>
-  <content>fii.panels.applications.structure=Structure</content>
+  <content>fii.panels.applications.structure=Structure
+
+## Translations for Course Sheet
+course.sheet.conditions.hint=(if applicable)
+course.sheet.conditions=Conditions
+course.sheet.content=Content
+course.sheet.course=Course
+course.sheet.courseInfo=Information about the Course
+course.sheet.evaluation.activityType=Activity type
+course.sheet.evaluation.criteria=Evaluation criteria
+course.sheet.evaluation.methods=Evaluation methods
+course.sheet.evaluation.percentage=Percentage in final grade~(%)
+course.sheet.evaluation=Evaluation
+course.sheet.laboratory=Laboratory
+course.sheet.laboratorySeminar=Laboratory/Seminar
+course.sheet.methods=Teaching methods
+course.sheet.notes=Notes
+course.sheet.objectives=Objectives
+course.sheet.preconditions.hint=(if applicable)
+course.sheet.preconditions=Preconditions
+course.sheet.specificCompetencies=Specific competencies
+course.sheet.studyProgramInfo=Information about the Study Program
+course.sheet.time.distribution=Time distribution
+course.sheet.time.estimationInfo.hint=(hours per semester and study activities)
+course.sheet.time.estimationInfo=Total Estimated Time
+course.sheet.time.hours=hours
+course.sheet.time.totalIndividual=Total hours of individual study [ST + DS + PS]
+course.sheet.time.totalSemester=Total hour per semester [no. of credits x 30 = T + E + C +TI]
+</content>
   <object>
     <name>Structure.Code.Translations</name>
     <number>0</number>

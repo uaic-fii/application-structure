@@ -40,66 +40,69 @@
 ## You can modify this page to customize the presentation of your object.
 ## At first you should keep the default presentation and just save the document.
 #set ($discard = $xwiki.ssfx.use("js/xwiki/table/table.css"))
-==$doc.display('CourseName')==
+==$doc.display('courseName')==
 
 (% class="grid" %)
-|(% colspan="2" %)**1. Information about the Study Program**
-|**1.1** Higher Learning Institution|**$doc.display('higherLearningInstitution')**
-|**1.2 **Faculty|**$doc.display('faculty')**
-|**1.3 **Department|**$doc.display('department')**
-|**1.4 **Field of Study|**$doc.display('fieldOfStudy')**
-|**1.5** Type of Degree|**$doc.display('typeOfDegree')**
-|**1.6** Study Program / Qualification|**$doc.display('studyProgram')**
+|(% colspan="2" %)**1. $services.localization.render('course.sheet.studyProgramInfo')**
+|**1.1** $doc.displayPrettyName('higherLearningInstitution')|**$doc.display('higherLearningInstitution')**
+|**1.2** $doc.displayPrettyName('faculty')|**$doc.display('faculty')**
+|**1.3** $doc.displayPrettyName('department')|**$doc.display('department')**
+|**1.4** $doc.displayPrettyName('fieldOfStudy')|**$doc.display('fieldOfStudy')**
+|**1.5** $doc.displayPrettyName('typeOfDegree')|**$doc.display('typeOfDegree')**
+|**1.6** $doc.displayPrettyName('studyProgram')|**$doc.display('studyProgram')**
 
 (% class="grid" %)
-|(% colspan="8" %)**2.  Information about the Course**
-|(% colspan="3" %)**2.1** Title|(% colspan="5" %)**$doc.display('courseName')**
-|(% colspan="3" %)**2.2** Course Coordinator|(% colspan="5" %)**$doc.display('courseCoordinators')**
-|(% colspan="3" %)**2.3** Laboratory Coordinators|(% colspan="5" %)**$doc.display('laboratoryCoordinators')**
-|**2.4** Year of study|**$doc.display('yearOfStudy')**|**2.5** Semester|**$doc.display('semester')**|**2.6** Evaluation Type|**$doc.display('evaluationType')**|**2.7** Course Type|**$doc.display('courseType')**
+|(% colspan="8" %)**2. $services.localization.render('course.sheet.courseInfo')**
+|(% colspan="3" %)**2.1** $doc.displayPrettyName('courseName')|(% colspan="5" %)**$doc.display('courseName')**
+|(% colspan="3" %)**2.2** $doc.displayPrettyName('courseCoordinators')|(% colspan="5" %)**$doc.display('courseCoordinators')**
+|(% colspan="3" %)**2.3** $doc.displayPrettyName('laboratoryCoordinators')|(% colspan="5" %)**$doc.display('laboratoryCoordinators')**
+|**2.4** $doc.displayPrettyName('yearOfStudy')|**$doc.display('yearOfStudy')**|**2.5** $doc.displayPrettyName('semester')|**$doc.display('semester')**|**2.6** $doc.displayPrettyName('evaluationType')|**$doc.display('evaluationType')**|**2.7** $doc.displayPrettyName('courseType')|**$doc.display('courseType')**
 
 ~* //OB – Compulsory / OP – Optional//
 
 (% class="grid" %)
-|(% colspan="6" %)**3. Total Estimated Time **(hours per semester and study activities)
-|**3.1** Number of hours per week|**$doc.display('hoursPerWeek')**|**3.2** Course hours|**$doc.display('courseHoursPerWeek')**|**3.3** Laboratory hours|**$doc.display('labHoursPerWeek')**
-|**3.4 **Total hours planned|#set ($totalTimePlanned = $numbertool.toNumber($doc.display('courseHoursTotal')) + $numbertool.toNumber($doc.display('labHoursTotal'))) **$totalTimePlanned**|**3.5** Course hours|**$doc.display('courseHoursTotal')**|**3.6** Laboratory hours|**$doc.display('labHoursTotal')**
-|(% colspan="5" %)Time distribution|hours
-|(% colspan="5" %)Individual study using manuals, course notes, etc.|**$doc.display('courseStudyHours')**
-|(% colspan="5" %)Individual study in the library, using specialized electronic tools, field work|**$doc.display('libraryStudyHours')**
-|(% colspan="5" %)Preparation of seminaries/laboratories, homework, papers, portfolios, essays|**$doc.display('homeworkHours')**
-|(% colspan="5" %)Tutorials |**$doc.display('tutorialsHours')**
-|(% colspan="5" %)Exams|**$doc.display('examinationHours')**
-|(% colspan="5" %)Other activities|**$doc.display('otherActivitiesHours')**
-|(% colspan="5" %)**3.7 **Total hours of individual study [ST + DS + PS]| #set ($indStudy = $numbertool.toNumber($doc.display('courseStudyHours')) + $numbertool.toNumber($doc.display('libraryStudyHours')) + $numbertool.toNumber($doc.display('homeworkHours')) + $numbertool.toNumber($doc.display('tutorialsHours'))) **$indStudy**
-|(% colspan="5" %)**3.8 **Total hour per semester [no. of credits x 30 = T + E + C +TI ]| #set ($totalTime = $totalTimePlanned + $numbertool.toNumber($doc.display('examinationHours')) + $indStudy) **$totalTime**
-|(% colspan="5" %)**3.9 **Number of credits|**$doc.display('credits')**
+|(% colspan="6" %)**3. $services.localization.render('course.sheet.time.estimationInfo')** $services.localization.render('course.sheet.time.estimationInfo.hint')
+|**3.1** $doc.displayPrettyName('hoursPerWeek')|**$doc.display('hoursPerWeek')**|**3.2** $doc.displayPrettyName('courseHoursPerWeek')|**$doc.display('courseHoursPerWeek')**|**3.3** $doc.displayPrettyName('labHoursPerWeek')|**$doc.display('labHoursPerWeek')**
+#set ($totalTimePlanned = $numbertool.toNumber($doc.getValue('courseHoursTotal')) + $numbertool.toNumber($doc.getValue('labHoursTotal')))
+|**3.4** $doc.displayPrettyName('hoursTotal')|**$!totalTimePlanned**|**3.5** $doc.displayPrettyName('courseHoursTotal')|**$doc.display('courseHoursTotal')**|**3.6** $doc.displayPrettyName('labHoursTotal')|**$doc.display('labHoursTotal')**
+|(% colspan="5" %)$services.localization.render('course.sheet.time.distribution')|$services.localization.render('course.sheet.time.hours')
+|(% colspan="5" %)$doc.displayPrettyName('courseStudyHours')|**$doc.display('courseStudyHours')**
+|(% colspan="5" %)$doc.displayPrettyName('libraryStudyHours')|**$doc.display('libraryStudyHours')**
+|(% colspan="5" %)$doc.displayPrettyName('homeworkHours')|**$doc.display('homeworkHours')**
+|(% colspan="5" %)$doc.displayPrettyName('tutorialsHours')|**$doc.display('tutorialsHours')**
+|(% colspan="5" %)$doc.displayPrettyName('examinationHours')|**$doc.display('examinationHours')**
+|(% colspan="5" %)$doc.displayPrettyName('otherActivitiesHours')|**$doc.display('otherActivitiesHours')**
+#set ($indStudy = $numbertool.toNumber($doc.getValue('courseStudyHours')) + $numbertool.toNumber($doc.getValue('libraryStudyHours')) + $numbertool.toNumber($doc.getValue('homeworkHours')) + $numbertool.toNumber($doc.getValue('tutorialsHours')))
+|(% colspan="5" %)**3.7** $services.localization.render('course.sheet.time.totalIndividual')|**$!indStudy**
+ #set ($totalTime = $totalTimePlanned + $numbertool.toNumber($doc.getValue('examinationHours')) + $indStudy)
+|(% colspan="5" %)**3.8** $services.localization.render('course.sheet.time.totalSemester')| **$!totalTime**
+|(% colspan="5" %)**3.9** $doc.displayPrettyName('credits')|**$doc.display('credits')**
 
 ~* //Obs. T = C + S//
 
 (% class="grid" %)
-|(% colspan="2" %)**4. Preconditions **(if applicable)
-|**4.1 **Curriculum preconditions|$doc.display('preconditionsCurriculum')
-|**4.2 **Competence preconditions|$doc.display('preconditionsCompetence')
+|(% colspan="2" %)**4. $services.localization.render('course.sheet.preconditions')** $services.localization.render('course.sheet.preconditions.hint')
+|**4.1** $doc.displayPrettyName('preconditionsCurriculum')|$doc.display('preconditionsCurriculum')
+|**4.2** $doc.displayPrettyName('preconditionsCompetence')|$doc.display('preconditionsCompetence')
 
 (% class="grid" %)
-|(% colspan="2" %)**5. Conditions **(if applicable)
-|**5.1 **For courses|$doc.display('materielRequirementsCourse')
-|**5.2 **For laboratories|$doc.display('materielRequirementsLab')
+|(% colspan="2" %)**5. $services.localization.render('course.sheet.conditions')** $services.localization.render('course.sheet.conditions.hint')
+|**5.1** $doc.displayPrettyName('materielRequirementsCourse')|$doc.display('materielRequirementsCourse')
+|**5.2** $doc.displayPrettyName('materielRequirementsLab')|$doc.display('materielRequirementsLab')
 
 (% class="grid" %)
-|(% colspan="2" %)**6. Specific competencies**
-|**Professional Competencies**|$doc.display('competenciesProfessional')
-|**Transversal competencies**|$doc.display('competenciesTransversal')
+|(% colspan="2" %)**6. $services.localization.render('course.sheet.specificCompetencies')**
+|**$doc.displayPrettyName('competenciesProfessional')**|$doc.display('competenciesProfessional')
+|**$doc.displayPrettyName('competenciesTransversal')**|$doc.display('competenciesTransversal')
 
 (% class="grid" %)
-|(% colspan="2" %)**7. Objectives**
-|**7.1 General Objective**|$doc.display('objectivesGeneral')
-|**7.2 Specific objectives**|$doc.display('objectivesSpecific')
+|(% colspan="2" %)**7. $services.localization.render('course.sheet.objectives')**
+|**7.1 $doc.displayPrettyName('objectivesGeneral')**|$doc.display('objectivesGeneral')
+|**7.2 $doc.displayPrettyName('objectivesSpecific')**|$doc.display('objectivesSpecific')
 
 (% class="grid" %)
-|(% colspan="6" %)**8. Content**
-|**8.1**|(% colspan="2" %)**Course**|(% colspan="2" %)**Teaching methods**|**Notes**
+|(% colspan="6" %)**8. $services.localization.render('course.sheet.content')**
+|**8.1**|(% colspan="2" %)**$services.localization.render('course.sheet.course')**|(% colspan="2" %)**$services.localization.render('course.sheet.methods')**|**$services.localization.render('course.sheet.notes')**
 |1.|(% colspan="2" %)$doc.display('contentCourse1')|(% colspan="2" %)$doc.display('contentCourse1Methods')|$doc.display('contentCourse1Notes')
 |2.|(% colspan="2" %)$doc.display('contentCourse2')|(% colspan="2" %)$doc.display('contentCourse2Methods')|$doc.display('contentCourse2Notes')
 |3.|(% colspan="2" %)$doc.display('contentCourse3')|(% colspan="2" %)$doc.display('contentCourse3Methods')|$doc.display('contentCourse3Notes')
@@ -115,7 +118,7 @@
 |13.|(% colspan="2" %)$doc.display('contentCourse13')|(% colspan="2" %)$doc.display('contentCourse13Methods')|$doc.display('contentCourse13Notes')
 |14.|(% colspan="2" %)$doc.display('contentCourse14')|(% colspan="2" %)$doc.display('contentCourse14Methods')|$doc.display('contentCourse14Notes')
 |(% colspan="6" %)$doc.display('contentCourseBibliography')
-|**8.2**|(% colspan="2" %)**Laboratory**|(% colspan="2" %)**Teaching methods**|**Notes**
+|**8.2**|(% colspan="2" %)**$services.localization.render('course.sheet.laboratory')**|(% colspan="2" %)**$services.localization.render('course.sheet.methods')**|**$services.localization.render('course.sheet.notes')**
 |1.|(% colspan="2" %)$doc.display('contentLab1')|(% colspan="2" %)$doc.display('contentLab1Methods')|$doc.display('contentLab1Notes')
 |2.|(% colspan="2" %)$doc.display('contentLab2')|(% colspan="2" %)$doc.display('contentLab2Methods')|$doc.display('contentLab2Notes')
 |3.|(% colspan="2" %)$doc.display('contentLab3')|(% colspan="2" %)$doc.display('contentLab3Methods')|$doc.display('contentLab3Notes')
@@ -133,15 +136,15 @@
 |(% colspan="6" %)$doc.display('contentLabBibliography')
 
 (% class="grid" %)
-|**9. Adaptation of course content according to the expectations of the representatives of communities, professional associations and main employers from the field of the teaching**
+|**9. $doc.displayPrettyName('industryConnection')**
 |$doc.display('industryConnection')
 
 (% class="grid" %)
-|(% colspan="7" %)**10. Evaluation**
-|**Activity type**|(% colspan="2" %)**10.1 Evaluation criteria**|(% colspan="2" %)**10.2 Evaluation methods**|(% colspan="2" %)**10.3 Percentage in final grade~(%)**
-|**10.4** Course|(% colspan="2" %)$doc.display('courseEvaluationCriteria')|(% colspan="2" %)$doc.display('courseEvaluationMethods')|(% colspan="2" %)$doc.display('courseEvaluationPercentage')
-|**10.4** Laboratory/Seminar|(% colspan="2" %)$doc.display('labEvaluationCriteria')|(% colspan="2" %)$doc.display('labEvaluationMethods')|(% colspan="2" %)$doc.display('labEvaluationPercentage')
-|(% colspan="7" %)**10.6** Minimum performance standards
+|(% colspan="7" %)**10. $services.localization.render('course.sheet.evaluation')**
+|**$services.localization.render('course.sheet.evaluation.activityType')**|(% colspan="2" %)**10.1 $services.localization.render('course.sheet.evaluation.criteria')**|(% colspan="2" %)**10.2 $services.localization.render('course.sheet.evaluation.methods')**|(% colspan="2" %)**10.3 $services.localization.render('course.sheet.evaluation.percentage')**
+|**10.4** $services.localization.render('course.sheet.course')|(% colspan="2" %)$doc.display('courseEvaluationCriteria')|(% colspan="2" %)$doc.display('courseEvaluationMethods')|(% colspan="2" %)$doc.display('courseEvaluationPercentage')
+|**10.5** $services.localization.render('course.sheet.laboratorySeminar')|(% colspan="2" %)$doc.display('labEvaluationCriteria')|(% colspan="2" %)$doc.display('labEvaluationMethods')|(% colspan="2" %)$doc.display('labEvaluationPercentage')
+|(% colspan="7" %)**10.6** $doc.displayPrettyName('minimumPerformanceStandards')
 |(% colspan="7" %)$doc.display('minimumPerformanceStandards')
 {{/velocity}}</content>
 </xwikidoc>
