@@ -58,7 +58,7 @@
 |(% colspan="3" %)**2.3** $doc.displayPrettyName('laboratoryCoordinators')|(% colspan="5" %)**$doc.display('laboratoryCoordinators')**
 |**2.4** $doc.displayPrettyName('yearOfStudy')|**$doc.display('yearOfStudy')**|**2.5** $doc.displayPrettyName('semester')|**$doc.display('semester')**|**2.6** $doc.displayPrettyName('evaluationType')|**$doc.display('evaluationType')**|**2.7** $doc.displayPrettyName('courseType')|**$doc.display('courseType')**
 
-~* //OB – Compulsory / OP – Optional//
+$services.localization.render('course.sheet.courseType.hint')
 
 (% class="grid" %)
 |(% colspan="6" %)**3. $services.localization.render('course.sheet.time.estimationInfo')** $services.localization.render('course.sheet.time.estimationInfo.hint')
@@ -78,7 +78,7 @@
 |(% colspan="5" %)**3.8** $services.localization.render('course.sheet.time.totalSemester')| **$!totalTime**
 |(% colspan="5" %)**3.9** $doc.displayPrettyName('credits')|**$doc.display('credits')**
 
-~* //Obs. T = C + S//
+$services.localization.render('course.sheet.credits.hint')
 
 (% class="grid" %)
 |(% colspan="2" %)**4. $services.localization.render('course.sheet.preconditions')** $services.localization.render('course.sheet.preconditions.hint')

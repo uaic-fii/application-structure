@@ -44,6 +44,8 @@ course.sheet.conditions=Conditions
 course.sheet.content=Content
 course.sheet.course=Course
 course.sheet.courseInfo=Information about the Course
+course.sheet.courseType.hint=~* //OB – Compulsory / OP – Optional//
+course.sheet.credits.hint=~* //Obs. T = C + S//
 course.sheet.evaluation.activityType=Activity type
 course.sheet.evaluation.criteria=Evaluation criteria
 course.sheet.evaluation.methods=Evaluation methods
